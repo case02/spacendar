@@ -12,10 +12,16 @@ is a calendar for space lovers and enthusiasts. Wake up to a new photo of the un
 <details>
            <summary>Casey Stocker</summary>
                       <p>GitHub Manager</p>
+</details>
+<details>
            <summary>Jordan Lind</summary>
                       <p>Scrum Master, Designer</p>
+</details>
+<details>
            <summary>Lianne Aratea</summary>
                       <p>Designer, Documenter</p>
+</details>
+<details>
            <summary>Pierce Goldbleck</summary>
                       <p>Database Manager</p>
 </details>
@@ -27,5 +33,6 @@ is a calendar for space lovers and enthusiasts. Wake up to a new photo of the un
 
 ### Route Page
 [Route Page Project 3.xlsx](https://github.com/case02/spacendar/files/10263256/Route.Page.Project.3.xlsx)
+![Screen Shot 2022-12-19 at 2 44 33 PM](https://user-images.githubusercontent.com/112737174/208541884-8c36a007-072a-4ce8-a745-00f2953a1745.png)
 
 
