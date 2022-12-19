@@ -6,8 +6,9 @@ const cors = require('cors')
 require('./models')
 require('dotenv').config()
 const PORT = process.env.PORT
+// access controllers
 const userCtrl = require('./controllers/users')
-const postCtrl = require('./controllers/posts')
+const commentCtrl = require('./controllers/comments')
 
 
 //middleware
@@ -19,7 +20,7 @@ app.use(express.json())
 
 //routes
 app.use('/user', userCtrl)
-app.use('/post', postCtrl)
+app.use('/comment', commentCtrl)
 
 
 app.listen(PORT, () => {
