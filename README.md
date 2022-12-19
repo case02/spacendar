@@ -9,10 +9,16 @@ is a calendar for space lovers and enthusiasts. Wake up to a new photo of the un
 # ![](frontend/src/assets/images/WireFrame.png)
 
 ## Team Roles
-Markup : <details>
+<details>
            <summary>Casey Stocker</summary>
-           <p>GitHub Manager</p>
-         </details>
+                      <p>GitHub Manager</p>
+           <summary>Jordan Lind</summary>
+                      <p>Scrum Master, Designer</p>
+           <summary>Lianne Aratea</summary>
+                      <p>Designer, Documenter</p>
+           <summary>Pierce Goldbleck</summary>
+                      <p>Database Manager</p>
+</details>
 
 ## User Stories:
 - As an aspiring astronaut, Spacendar allows me to discover a new image of the universe every day and comment and share with my friends.
