@@ -1,7 +1,7 @@
-# Spacendar
+# Spacendar 👾🔭🪐
 is a calendar for space lovers and enthusiasts. Wake up to a new photo of the universe, everyday. Users are able to view the current day's photo or look back in time to previous days, months or even years. Log in to comment on your favorite photos, share with friends, and get lost in space.
 
-# Spacendar
+## Spacendar
 [GitHub Repo](https://github.com/case02/spacendar
 )
 ## Wireframes: 
