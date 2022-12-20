@@ -27,7 +27,7 @@ function App() {
 	// APOD searcher function
 	function getImages(searchString) {
 		/* Build a URL from the searchOptions object */
-    const key = process.env.REACT_APP_GIPHY_KEY;
+    const key = process.env.REACT_APP_APOD_KEY;
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
 		fetch(url)
 			.then((response) => response.json())
