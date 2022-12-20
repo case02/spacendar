@@ -13,13 +13,13 @@ import Comment from './components/Comment';
 // styles
 import './global_styles/App.css';
 
-function App() 
+function App() {
 	// state
-  const [isLoggedIn, setLogInStatus] = useState(false);
-  // requested image of particular date 
+	const [isLoggedIn, setLogInStatus] = useState(false);
+	// requested image of particular date 
 	const [images, setImages] = useState([]);
-  // requested date
-  const [date, setDate] = useState([]);
+  	// requested date
+  	const [date, setDate] = useState([]);
 	// const [searchString, setSearchString] = useState('minions');
 	// const [lastSearch, setLastSearch] = useState('');
 	
