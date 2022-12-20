@@ -1,0 +1,47 @@
+// Imports
+@use '../../global_styles/App' as vars;
+
+
+// Main Styles
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    padding: 1em 2em;
+    border-bottom: 2px solid black;
+
+    .nav-item:nth-of-type(2) {
+        a {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-decoration: none;
+            color: vars.$purple;
+
+            img {
+                margin-left: -5px;
+                height: 40px
+            }
+        }
+    }
+}
+
+
+// Mobile-specific Styles
+@media only screen and (max-device-width: 600px) {
+    nav {
+        padding: 0.5em;
+
+        .nav-item {
+            text-align: center;
+            width: 33%;
+
+            &:nth-of-type(2) {
+                h1 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
