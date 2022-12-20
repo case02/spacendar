@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+<<<<<<< HEAD
+=======
+    "method-override": "^3.0.0",
+>>>>>>> fb9a217 (added mock-api function in app.js and run dev in package.json)
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jwt-simple": "^0.5.6",
