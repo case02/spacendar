@@ -5,11 +5,11 @@ const jwt = require('jwt-simple')
 const config = require('../config/config')
 
 function isAuthenticated(req, res, next){
-    // if(req.headers.authorization){
-    //     next()
-    // } else {
-    //     res.sendStatus(401)
-    // }
+    if(req.headers.authorization){
+        next()
+    } else {
+        res.sendStatus(401)
+    }
     next();
 }
 
@@ -17,9 +17,9 @@ function isAuthenticated(req, res, next){
 router.post('/', isAuthenticated, async (req, res) => {
     console.log('theo')
     const createdComment = await db.Comment.create(req.body)
-    // const token = req.headers.authorization
-    // const decoded = jwt.decode(token, config.jwtSecret)
-    // createdComment.user = decoded.id
+    const token = req.headers.authorization
+    const decoded = jwt.decode(token, config.jwtSecret)
+    createdComment.user = decoded.id
     createdComment.save()
     res.json(createdComment)
 })
@@ -49,6 +49,12 @@ router.put('/:id', isAuthenticated, async (req, res) => {
         )
         res.json(updatedComment)
     }
+    const updatedComment = await db.Comment.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true}
+    )
+    res.json(updatedComment)
 })
 
 //delete
