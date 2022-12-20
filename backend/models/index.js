@@ -25,4 +25,4 @@ mongoose.connection.on('error', (error) => {
 });
 
 module.exports.User = require('./user')
-module.exports.Post = require('./comment')
+module.exports.Comment = require('./comment')

@@ -5,53 +5,55 @@ const jwt = require('jwt-simple')
 const config = require('../config/config')
 
 function isAuthenticated(req, res, next){
-    if(req.headers.authorization){
-        next()
-    } else {
-        res.sendStatus(401)
-    }
+    // if(req.headers.authorization){
+    //     next()
+    // } else {
+    //     res.sendStatus(401)
+    // }
+    next();
 }
 
 // create route
 router.post('/', isAuthenticated, async (req, res) => {
-    const createdPost = await db.Post.create(req.body)
-    const token = req.headers.authorization
-    const decoded = jwt.decode(token, config.jwtSecret)
-    createdPost.user = decoded.id
-    createdPost.save()
-    res.json(createdPost)
+    console.log('theo')
+    const createdComment = await db.Comment.create(req.body)
+    // const token = req.headers.authorization
+    // const decoded = jwt.decode(token, config.jwtSecret)
+    // createdComment.user = decoded.id
+    createdComment.save()
+    res.json(createdComment)
 })
 
 // index route
 router.get('/', async (req, res) => {
-    const allPosts = await db.Post.find({}).populate('user')
-    res.json(allPosts)
+    const allComments = await db.Comment.find({}).populate('user')
+    res.json(allComments)
 })
 
 // show route
 router.get('/:id', async (req, res) => {
-    const foundPost = await db.Post.findById(req.params.id).populate('user')
-    res.json(foundPost)
+    const foundComment = await db.Comment.findById(req.params.id).populate('user')
+    res.json(foundComment)
 })
 
 //update
 router.put('/:id', isAuthenticated, async (req, res) => {
-    const foundPost = await db.Post.findById(req.params.id)
+    const foundComment = await db.Comment.findById(req.params.id)
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
-    if(foundPost.user == decoded.id){
-        const updatedPost = await db.Post.findByIdAndUpdate(
+    if(foundComment.user == decoded.id){
+        const updatedComment = await db.Comment.findByIdAndUpdate(
             req.params.id,
             req.body,
             {new: true}
         )
-        res.json(updatedPost)
+        res.json(updatedComment)
     }
 })
 
 //delete
 router.delete('/:id', isAuthenticated, async (req, res)=> {
-    await db.Post.findByIdAndDelete(req.params.id)
+    await db.Comment.findByIdAndDelete(req.params.id)
     res.sendStatus(200)
 })
 
