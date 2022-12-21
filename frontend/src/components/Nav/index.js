@@ -7,12 +7,11 @@ import './styles.css'
 export default function Nav(props) {
     // state declaration: build JSX array of NavBar items
     const initialState = [
-        <div className='nav-item' key='1'>Theme</div>,
+        <div className='nav-item' key='1'>Month View</div>,
 
         <div className='nav-item' key='2'>
             <Link to='/'>
-                <img alt='blogr_logo' src='blogr_logo.png' />
-                <h1>logr</h1>
+                <h1>HOME</h1>
             </Link>
         </div>
     ]
