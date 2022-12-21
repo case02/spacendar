@@ -50,7 +50,7 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-				<Route path='/' element={<Home />} />
+				{/* <Route path='/' element={<Home />} /> */}
 				{/* commented out routes are pages that are not built yet */}
 				{/* <Route path='/month' element={<Month />} /> */}
 				<Route path='/login' element={<Login />} />
