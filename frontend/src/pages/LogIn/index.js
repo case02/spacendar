@@ -19,7 +19,11 @@ export default function LogIn(props) {
                 localStorage.token = data.token;
                 props.setLogInStatus(true)
             })
+<<<<<<< HEAD
             navigate('/')
+=======
+        navigate('/')
+>>>>>>> 969d9d2 (sign up and log in functionality)
     }
 
     return (

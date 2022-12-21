@@ -9,7 +9,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import User from './pages/User';
 import Day from './pages/Day';
+<<<<<<< HEAD
 import Month from './pages/Month';
+=======
+>>>>>>> 969d9d2 (sign up and log in functionality)
 
 // components
 import Nav from './components/Nav';
@@ -29,9 +32,20 @@ function App() {
 	const [images, setImages] = useState([]);
   	// requested date
   	const [date, setDate] = useState([]);
+<<<<<<< HEAD
 	const [monthImages, setMonthImages] = useState([]);
 
 	 
+=======
+	// const [searchString, setSearchString] = useState('minions');
+	// const [lastSearch, setLastSearch] = useState('');
+
+	 useEffect(() => {
+			if (localStorage.token) {
+				setLogInStatus(true);
+			}
+		}, []);
+>>>>>>> 969d9d2 (sign up and log in functionality)
 
 	// APOD searcher function
 	function getImages() {
@@ -67,6 +81,7 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
+<<<<<<< HEAD
 				<Route path='/' element={<Home monthImages={monthImages}/>} />
 
 				<Route path='/month' 
@@ -74,6 +89,11 @@ function App() {
 				<Month monthImages= {monthImages} /> 
 				}
 				/>
+=======
+				{/* <Route path='/' element={<Home />} /> */}
+				{/* commented out routes are pages that are not built yet */}
+				{/* <Route path='/month' element={<Month />} /> */}
+>>>>>>> 969d9d2 (sign up and log in functionality)
 				<Route
 					path='/user/login'
 					element={
