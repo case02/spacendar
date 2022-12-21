@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+
 export default function SignUp() {
     const initialState = { username: '', password: '' };
 	const [formState, setFormState] = useState(initialState);
