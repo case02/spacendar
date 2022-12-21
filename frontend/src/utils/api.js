@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// user signup
 export async function signUp(formData) {
     const { data } = await axios.post('http://localhost:3001/user/signup', formData)
     return data
@@ -14,5 +13,9 @@ export async function createComment(formData) {
         }
     }
     const { data } = await axios.post('http://localhost:3001/comment', formData, config)
+
+    
+//Log in to User Account
+    const { data } = await axios.post('http://127.0.0.1/user/login', formData)
     return data
 }

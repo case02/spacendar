@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { loginToAccount } from '../../utils/api';
 
 export default function LogIn(props) {
     const [formState, setFormState] = useState({
@@ -11,6 +12,11 @@ export default function LogIn(props) {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
+        loginToAccount(formState)
+            .then((data) => {
+                localStorage.token = data.token
+                props.setLogInStatus(true)
+            })
         
     }
 
