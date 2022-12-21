@@ -10,7 +10,7 @@ export default function SignUp(props) {
 
 		function handleSubmit(event) {
 			event.preventDefault();
-			signUp(formData).then((data) => {
+			signUp(formState).then((data) => {
 				localStorage.token = data.token;
 				props.setLogInStatus(true)
 			})
