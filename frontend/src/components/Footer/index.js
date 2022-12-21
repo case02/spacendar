@@ -10,6 +10,7 @@ export default function Footer() {
 				/>
 				<h4>Contributors: </h4>
 				<h5>Lianne Aratea, Pierce Goldbeck, Jordan Lind, and Casey Stocker</h5>
+				
 			</footer>
 		);
 }
