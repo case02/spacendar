@@ -19,7 +19,7 @@ export default function LogIn(props) {
                 localStorage.token = data.token;
                 props.setLogInStatus(true)
             })
-        navigate('/')
+            navigate('/')
     }
 
     return (
