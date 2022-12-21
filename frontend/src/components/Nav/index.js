@@ -18,6 +18,7 @@ export default function Nav(props) {
 			</div>
 		]
 
+        
     const [navItems, setNavItems] = useState(initialState)
 
     // add NavBar items to JSX array depending on App login state

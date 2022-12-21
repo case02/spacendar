@@ -40,6 +40,7 @@ function App() {
 	function getImages(searchString) {
 		/* Build a URL from the searchOptions object */
     const key = process.env.REACT_APP_APOD_KEY;
+	setDate('2014 - 10 - 01');
 		const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
 		fetch(url)
 			.then((response) => response.json())
@@ -55,7 +56,7 @@ function App() {
 			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
 
 			{/* Main Content */}
-
+			<h1>{images}</h1>
 			{/* Footer */}
 			<Footer />
 
