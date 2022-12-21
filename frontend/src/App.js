@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 // pages
+import SignUp from './pages/SignUp';
 
 // components
 import Nav from './components/Nav';
