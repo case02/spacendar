@@ -4,11 +4,17 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from 'react-router-dom';
 // pages
 import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import Home from './pages/Home';
+import About from './pages/About';
+import User from './pages/User';
+import Day from './pages/Day';
 
 // components
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Comment from './components/Comment';
+
 // utils
 
 // styles
@@ -23,8 +29,13 @@ function App() {
   	const [date, setDate] = useState([]);
 	// const [searchString, setSearchString] = useState('minions');
 	// const [lastSearch, setLastSearch] = useState('');
-	
-	
+
+	 useEffect(() => {
+			if (localStorage.token) {
+				setLogInStatus(true);
+			}
+		}, []);
+
 	// APOD searcher function
 	function getImages(searchString) {
 		/* Build a URL from the searchOptions object */
@@ -53,8 +64,18 @@ function App() {
 				{/* <Route path='/' element={<Home />} /> */}
 				{/* commented out routes are pages that are not built yet */}
 				{/* <Route path='/month' element={<Month />} /> */}
-				<Route path='/login' element={<Login />} />
-				<Route path='/signup' element={<SignUp />} />
+				<Route
+					path='/user/login'
+					element={
+						<LogIn isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+					}
+				/>
+				<Route
+					path='/user/signup'
+					element={
+						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+					}
+				/>
 				{/* <Route path='/user/:id' element={<User />} /> */}
 			</Routes>
 		</div>

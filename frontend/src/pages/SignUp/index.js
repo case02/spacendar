@@ -1,21 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { signUp } from '../../utils/api';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp(props) {
 	const initialState = { username: '', password: '' };
 	const [formState, setFormState] = useState(initialState);
+	const navigate = useNavigate();
 
 	const handleChange = (event) => {
-		setFormState({ ...formState, [event.target.id]: event.target.value });
-
+		setFormState({ ...formState, [event.target.name]: event.target.value })};
+		
 		function handleSubmit(event) {
 			event.preventDefault();
 			signUp(formState).then((data) => {
 				localStorage.token = data.token;
-				props.setLogInStatus(true)
-			})
-		};
+			navigate('/user/login')
+			})};
+
 		return (
+			<div className="form">
+			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='username'>
 					<p>Username</p>
@@ -37,10 +41,8 @@ export default function SignUp(props) {
 						required
 					/>
 				</label>
-				<div>
-					<button typ='submit'>Sign Up</button>
-				</div>
+					<button type='submit'>Sign Up</button>
 			</form>
+			</div>
 		);
-	};
-}
+	}
