@@ -50,9 +50,12 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-				{/* <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp/>} /> */}
+				<Route path='/' element={<Home />} />
+				{/* commented out routes are pages that are not built yet */}
+				{/* <Route path='/month' element={<Month />} /> */}
+				<Route path='/login' element={<Login />} />
+				<Route path='/signup' element={<SignUp />} />
+				{/* <Route path='/user/:id' element={<User />} /> */}
 			</Routes>
 		</div>
 	);
