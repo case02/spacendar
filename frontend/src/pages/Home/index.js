@@ -1,10 +1,13 @@
-// packages
-
-
 export default function Home(props) {
-
     // render JSX
     return (
-        <h1>Home Page</h1>   
-    )
+        <div className='day-container'>
+            {props.monthImages.length && (
+                <img
+                    alt='current-day'
+                    src={props.monthImages[props.monthImages.length - 1].hdurl}
+                />
+            )}
+        </div>
+    );
 }
