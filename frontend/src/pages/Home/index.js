@@ -5,7 +5,7 @@ export default function Home(props) {
             {props.monthImages.length && (
                 <img
                     alt='current-day'
-                    src={props.monthImages[props.monthImages.length - 1].hdurl}
+                    src={props.monthImages[props.monthImages.length - 1].hdurl}width="100%"
                 />
             )}
         </div>
