@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import User from './pages/User';
 import Day from './pages/Day';
+import Month from './pages/Month';
 
 // components
 import Nav from './components/Nav';
@@ -20,6 +21,7 @@ import Comment from './components/Comment';
 // styles
 import './global_styles/App.css';
 
+
 function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
@@ -27,44 +29,50 @@ function App() {
 	const [images, setImages] = useState([]);
   	// requested date
   	const [date, setDate] = useState([]);
-	// const [searchString, setSearchString] = useState('minions');
-	// const [lastSearch, setLastSearch] = useState('');
+	const [monthImages, setMonthImages] = useState([]);
 
-	 useEffect(() => {
-			if (localStorage.token) {
-				setLogInStatus(true);
-			}
-		}, []);
+	 
 
 	// APOD searcher function
-	function getImages(searchString) {
+	function getImages() {
 		/* Build a URL from the searchOptions object */
-    const key = process.env.REACT_APP_APOD_KEY;
-	setDate('2014 - 10 - 01');
-		const url = `https://api.nasa.gov/planetary/apod?api_key=${key}&date=${date}`;
+    	// const key = process.env.REACT_APP_APOD_KEY;
+		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-21';  
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				setImages(response.url);
+				setMonthImages(response);
 			})
 			.catch(console.error);
 	}
-
+	useEffect(() => {
+				if (localStorage.token) {
+					setLogInStatus(true);
+				}
+				getImages();
+				
+			}, []);
 	return (
 		<div>
 			{/* Header */}
 			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
 
 			{/* Main Content */}
-			<h1>{images}</h1>
+		
+		
+			
+		
 			{/* Footer */}
 			<Footer />
 
 			{/* ROUTES */}
 			<Routes>
-				{/* <Route path='/' element={<Home />} /> */}
-				{/* commented out routes are pages that are not built yet */}
-				{/* <Route path='/month' element={<Month />} /> */}
+				<Route path='/' element={<Home />} />
+				<Route path='/month' 
+				element={
+				<Month monthImages= {monthImages} /> 
+				}
+				/>
 				<Route
 					path='/user/login'
 					element={
