@@ -25,14 +25,16 @@ import './global_styles/App.css';
 function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
+	const [user, setUser] = useState([]);
 	// requested image of particular date 
 	const [images, setImages] = useState([]);
   	// requested date
   	const [date, setDate] = useState([]);
 	const [monthImages, setMonthImages] = useState([]);
-
+	//form visibility
+	const [editFormVis, setEditFormVis] = useState(false);
 	 
-
+	console.log('this is app.js user', user)
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
@@ -51,11 +53,11 @@ function App() {
 				}
 				getImages();
 				
-			}, [Navigate]);
+			}, [Navigate, setUser, setLogInStatus]);
 	return (
 		<div>
 			{/* Header */}
-			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser} />
 
 			{/* Main Content */}
 
@@ -65,11 +67,20 @@ function App() {
 			{/* ROUTES */}
 			<Routes>
 				<Route path='/' element={<Home monthImages={monthImages} />} />
+				<Route
+					path='/user'
+					element={<User edit={setEditFormVis} userAccnt={user} />}
+				/>
 				<Route path='/month' element={<Month monthImages={monthImages} />} />
 				<Route
 					path='/user/login'
 					element={
-						<LogIn isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+						<LogIn
+							isLoggedIn={isLoggedIn}
+							setLogInStatus={setLogInStatus}
+							setUser={setUser}
+							user={user}
+						/>
 					}
 				/>
 				<Route
