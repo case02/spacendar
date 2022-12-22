@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { loginToAccount } from '../../utils/api';
+import { useNavigate } from 'react-router-dom';
 
 export default function LogIn(props) {
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
         username: '',
         password: ''
@@ -14,10 +16,10 @@ export default function LogIn(props) {
         event.preventDefault();
         loginToAccount(formState)
             .then((data) => {
-                localStorage.token = data.token
+                localStorage.token = data.token;
                 props.setLogInStatus(true)
             })
-        
+        navigate('/')
     }
 
     return (
@@ -26,17 +28,17 @@ export default function LogIn(props) {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username: </label>
                 <input
-                    id="username"
                     type="text"
+                    name="username"
                     onChange={handleChange}
-                    value={formState.username}
+                    defaultValue={formState.username}
                 />
                 <label htmlFor="password">Password: </label>
                 <input
-                    id="password"
                     type="password"
+                    name="password"
                     onChange={handleChange}
-                    value={formState.password}
+                    defaultValue={formState.password}
                 />
                 <button type="submit">Login</button>
             </form>

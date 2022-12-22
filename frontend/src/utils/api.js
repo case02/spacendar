@@ -1,7 +1,8 @@
 import axios from 'axios';
 
+// sign up function
 export async function signUp(formData) {
-    const { data } = await axios.post('http://localhost:3001/user/signup', formData)
+    const { data } = await axios.post('http://localhost:8000/user/signup', formData)
     return data
 }
 
@@ -12,10 +13,16 @@ export async function createComment(formData) {
             'Authorization': localStorage.getItem('token')
         }
     }
-    const { data } = await axios.post('http://localhost:3001/comment', formData, config)
+    const { data } = await axios.post('http://localhost:8000/comment', formData, config)
+    return data
+}
 
     
 //Log in to User Account
-    const { data } = await axios.post('http://127.0.0.1/user/login', formData)
+export async function loginToAccount(formData) {
+    const { data } = await axios.post(
+			'http://localhost:8000/user/login',
+			formData
+		);
     return data
 }

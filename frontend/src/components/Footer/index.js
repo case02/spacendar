@@ -11,7 +11,7 @@ export default function Footer() {
 				<h4>Contributors: </h4>
 				<h5>Lianne Aratea, Pierce Goldbeck, Jordan Lind, and Casey Stocker</h5>
 				<a href ="https://apod.nasa.gov/apod/calendar/allyears.html">NASA APOD Inspiration</a>
-				<a href=""
+				
 			</footer>
 		);
 }
