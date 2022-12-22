@@ -9,16 +9,19 @@ export default function Nav(props) {
     const initialState = [
 			<div className='nav-item' key='1'>
 				<Link to='/month'>
-                    <h1>Month</h1>
-                </Link>
+					<h1>Month</h1>
+				</Link>
 			</div>,
 
 			<div className='nav-item' key='2'>
 				<Link to='/'>
 					<h1>Home</h1>
 				</Link>
-			</div>
-		]
+				<Link to='/user'>
+					<h1>User</h1>
+				</Link>
+			</div>,
+		];
 
         
     const [navItems, setNavItems] = useState(initialState)
@@ -28,7 +31,7 @@ export default function Nav(props) {
         if (props.isLoggedIn) {
             setNavItems(initialState.concat(
                 <div className="nav-item" key='3'>
-                    <button onClick={() => { props.setLogInStatus(false) }}>Log Out</button>
+                    <button onClick={() => { props.setLogInStatus(false); props.setUser([])}}>Log Out</button>
                 </div>
             ))
         } else {

@@ -17,12 +17,22 @@ export async function createComment(formData) {
     return data
 }
 
-    
 //Log in to User Account
 export async function loginToAccount(formData) {
     const { data } = await axios.post(
 			'http://localhost:8000/user/login',
 			formData
 		);
+    return data
+}
+
+// update user account
+export async function updateUser(userId, formData) {
+    const config = {
+        headers: {
+            'Authorization': localStorage.getItem('token')
+        }
+    }
+    const { data } = await axios.put(`http://localhost:8000/user/${userId}`, formData, config)
     return data
 }
