@@ -9,14 +9,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 import User from './pages/User';
 import Day from './pages/Day';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import Month from './pages/Month';
-=======
->>>>>>> 969d9d2 (sign up and log in functionality)
-=======
-import Month from './pages/Month';
->>>>>>> dev
+
+
+
 
 // components
 import Nav from './components/Nav';
@@ -36,36 +33,23 @@ function App() {
 	const [images, setImages] = useState([]);
   	// requested date
   	const [date, setDate] = useState([]);
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	const [monthImages, setMonthImages] = useState([]);
 
 	 
-=======
+
 	// const [searchString, setSearchString] = useState('minions');
 	// const [lastSearch, setLastSearch] = useState('');
 
-	 useEffect(() => {
-			if (localStorage.token) {
-				setLogInStatus(true);
-			}
-		}, []);
->>>>>>> 969d9d2 (sign up and log in functionality)
-=======
-	const [monthImages, setMonthImages] = useState([]);
-
 	 
->>>>>>> dev
+	 
+
 
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
     	// const key = process.env.REACT_APP_APOD_KEY;
-<<<<<<< HEAD
-		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-22';  
-=======
 		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-21';  
->>>>>>> dev
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -95,8 +79,7 @@ function App() {
 
 			{/* ROUTES */}
 			<Routes>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 				<Route path='/' element={<Home monthImages={monthImages}/>} />
 
 				<Route path='/month' 
@@ -104,15 +87,14 @@ function App() {
 				<Month monthImages= {monthImages} /> 
 				}
 				/>
-=======
+
 				{/* <Route path='/' element={<Home />} /> */}
 				{/* commented out routes are pages that are not built yet */}
 				{/* <Route path='/month' element={<Month />} /> */}
->>>>>>> 969d9d2 (sign up and log in functionality)
-=======
+
 				<Route path='/' element={<Home monthImages={monthImages} />} />
 				<Route path='/month' element={<Month monthImages={monthImages} />} />
->>>>>>> dev
+
 				<Route
 					path='/user/login'
 					element={
