@@ -1,3 +1,5 @@
+import './home.css';
+
 export default function Home(props) {
     // render JSX
     return (
