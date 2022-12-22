@@ -8,7 +8,9 @@ export default function Nav(props) {
     // state declaration: build JSX array of NavBar items
     const initialState = [
 			<div className='nav-item' key='1'>
-				<h1>Month</h1>
+				<Link to='/month'>
+                    <h1>Month</h1>
+                </Link>
 			</div>,
 
 			<div className='nav-item' key='2'>
