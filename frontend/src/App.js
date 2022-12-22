@@ -1,7 +1,7 @@
 // packages
 import axios from 'axios';
 import { useEffect, useState } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 // pages
 import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
@@ -51,7 +51,7 @@ function App() {
 				}
 				getImages();
 				
-			}, []);
+			}, [Navigate]);
 	return (
 		<div>
 			{/* Header */}
