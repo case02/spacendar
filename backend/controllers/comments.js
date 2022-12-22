@@ -10,12 +10,10 @@ function isAuthenticated(req, res, next){
     } else {
         res.sendStatus(401)
     }
-    next();
 }
 
 // create route
 router.post('/', isAuthenticated, async (req, res) => {
-    console.log('theo')
     const createdComment = await db.Comment.create(req.body)
     const token = req.headers.authorization
     const decoded = jwt.decode(token, config.jwtSecret)
