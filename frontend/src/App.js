@@ -58,21 +58,14 @@ function App() {
 			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
 
 			{/* Main Content */}
-		
-		
-			
-		
+
 			{/* Footer */}
 			<Footer />
 
 			{/* ROUTES */}
 			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/month' 
-				element={
-				<Month monthImages= {monthImages} /> 
-				}
-				/>
+				<Route path='/' element={<Home monthImages={monthImages} />} />
+				<Route path='/month' element={<Month monthImages={monthImages} />} />
 				<Route
 					path='/user/login'
 					element={
