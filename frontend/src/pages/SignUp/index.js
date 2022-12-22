@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import { signUp } from '../../utils/api';
-<<<<<<< HEAD
 import { useState } from 'react'
-=======
-import { useNavigate } from 'react-router-dom';
->>>>>>> 969d9d2 (sign up and log in functionality)
 
 export default function SignUp(props) {
 	const initialState = { username: '', password: '' };
@@ -50,6 +46,7 @@ export default function SignUp(props) {
 			</div>
 		);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	};
 }
     const handleSubmit = (event) => {
@@ -82,3 +79,7 @@ export default function SignUp(props) {
 =======
 	}
 >>>>>>> 969d9d2 (sign up and log in functionality)
+=======
+	};
+
+>>>>>>> 5cf58a0 (merge conflicts AGAIN)
