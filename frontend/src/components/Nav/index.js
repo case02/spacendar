@@ -1,6 +1,9 @@
 // packages
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // styles
 import './styles.css'
 
@@ -28,7 +31,7 @@ export default function Nav(props) {
         if (props.isLoggedIn) {
             setNavItems(initialState.concat(
                 <div className="nav-item" key='3'>
-                    <button onClick={() => { props.setLogInStatus(false) }}>Log Out</button>
+                    <Button class="btn btn-dark btn-lg" onClick={() => { props.setLogInStatus(false) }}>Log Out</Button>
                 </div>
             ))
         } else {
