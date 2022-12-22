@@ -9,12 +9,18 @@ export default function Nav(props) {
     const initialState = [
 			<div className='nav-item' key='1'>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<Link to='/month'>
                     <h1>Month</h1>
                 </Link>
 =======
 				<h1>Month</h1>
 >>>>>>> 969d9d2 (sign up and log in functionality)
+=======
+				<Link to='/month'>
+                    <h1>Month</h1>
+                </Link>
+>>>>>>> dev
 			</div>,
 
 			<div className='nav-item' key='2'>
@@ -25,9 +31,13 @@ export default function Nav(props) {
 		]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 =======
 >>>>>>> 969d9d2 (sign up and log in functionality)
+=======
+        
+>>>>>>> dev
     const [navItems, setNavItems] = useState(initialState)
 
     // add NavBar items to JSX array depending on App login state

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+import { useEffect } from 'react';
+>>>>>>> dev
 export default function Month(props) {
     return (
         <div className='month-container'>

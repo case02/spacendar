@@ -20,10 +20,14 @@ export default function LogIn(props) {
                 props.setLogInStatus(true)
             })
 <<<<<<< HEAD
+<<<<<<< HEAD
             navigate('/')
 =======
         navigate('/')
 >>>>>>> 969d9d2 (sign up and log in functionality)
+=======
+            navigate('/')
+>>>>>>> dev
     }
 
     return (
