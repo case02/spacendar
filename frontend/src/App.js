@@ -31,8 +31,6 @@ function App() {
   	// requested date
   	const [date, setDate] = useState([]);
 	const [monthImages, setMonthImages] = useState([]);
-	//form visibility
-	const [editFormVis, setEditFormVis] = useState(false);
 	 
 	console.log('this is app.js user', user)
 	// APOD searcher function
@@ -73,7 +71,7 @@ function App() {
 				<Route path='/' element={<Home monthImages={monthImages} />} />
 				<Route
 					path='/user'
-					element={<User edit={setEditFormVis} user={user} setLogInStatus={setLogInStatus} />}
+					element={<User user={user} setLogInStatus={setLogInStatus} />}
 				/>
 				<Route path='/month' element={<Month monthImages={monthImages} />} />
 				<Route
