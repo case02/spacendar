@@ -8,7 +8,7 @@ export default function Month(props) {
 		<div className='month-container'>
 			<h1>December</h1>
 
-			{/* <div className="wk1">
+            <div className="wk1">
                 {props.monthImages.slice(0,7).map((a, i) => {
                     return (
                         <div class="test">
