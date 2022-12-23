@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { createComment } from '../../utils/api';
 
 export default function Comment(props) {
-	const [formData, setFormData] = useState({ title: '', text: '' });
+	const [formData, setFormData] = useState({ comment: '' });
+	const [showForm, setShowForm] = useState(false);
+
 
 	function handleChange(e) {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,39 +15,48 @@ export default function Comment(props) {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		createComment(formData).then((data) => console.log(data));
+		createComment(formData).then((data) => console.log('this is our comment', data));
 	}
 
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	// redirect to home page if not logged in
-	useEffect(() => {
-		if (!props.isLoggedIn) {
-			navigate('/');
-		}
-	}, [props.isLoggedIn]);
+	// useEffect(() => {
+	// 	if (!props.isLoggedIn) {
+	// 		navigate('/');
+	// 	}
+	// }, [props.isLoggedIn]);
 
 	// render JSX
 	return (
-		<form>
-			<h1>Create a Post</h1>
-			<label htmlFor='title'>Title:</label>
-			<input
-				type='text'
-				name='title'
-				value={formData.title}
-				onChange={handleChange}
-			/>
+		<div className='comment-container'>	
+			<div className='comment-form'>
+				<button
+					className='btn btn-primary'
+					onClick={() => {
+						setShowForm(!showForm);
+					}}>
+					Leave a comment
+				</button>
+				{showForm ? (
+					<form>
+						<input
+							id='comment'
+							className='form-control'
+							type='text'
+							placeholder='...'
+							onChange={handleChange}
+						/>
 
-			<label htmlFor='text'>Post Text:</label>
-			<input
-				type='text'
-				name='text'
-				value={formData.text}
-				onChange={handleChange}
-			/>
+						<button className='btn btn-primary' onClick={handleSubmit}>
+							Comment
+						</button>
+					</form>
+				) : null}
+			</div>
+			<div className='display-comments'>
 
-			<button onClick={handleSubmit}>Comment</button>
-		</form>
+			</div>
+		</div>
 	);
 }
