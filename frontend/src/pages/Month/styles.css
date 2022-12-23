@@ -1,5 +1,5 @@
 .month-cal {
-  display: flex;
-  flex-wrap: wrap;
-  order: 7;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
 }/*# sourceMappingURL=styles.css.map */
