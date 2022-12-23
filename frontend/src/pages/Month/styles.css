@@ -1,5 +1,44 @@
 .month-cal {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0;
-}/*# sourceMappingURL=styles.css.map */
+  display: flex;
+  flex-wrap: wrap;
+  order: 7;
+}
+.month-cal img{
+  border: 1px black solid;
+}
+.date-number {
+  position: absolute;
+  padding: 0.8em 0.5em 2em 1em;
+  margin: 1em 1em;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0,0,0, 0.7);
+}
+
+.date-number p {
+  color: white;
+}
+
+@media (max-width: 500px) { 
+  .month-cal {
+  display: flex;
+  flex-direction: column;
+}
+  .month-cal img{
+    width: 100%;
+    height: 80%;
+    border: 1px black solid;
+  }
+  .date-number {
+    position: absolute;
+    padding: 0.8em 0.5em 2em 1em;
+    margin: 1em 1em;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0,0,0, 0.7);
+  }
+.date-number p{
+  color: white;
+}}
