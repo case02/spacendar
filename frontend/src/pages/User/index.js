@@ -18,7 +18,7 @@ export default function User(prop) {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
 
-	const handleSubmitUpdateUser= (event) => {
+	const handleSubmitUpdateUser = (event) => {
 		event.preventDefault();
 		updateUser(prop.user._id, formState);
 		prop.edit(false);

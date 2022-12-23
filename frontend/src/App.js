@@ -57,7 +57,11 @@ function App() {
 	return (
 		<div>
 			{/* Header */}
-			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser} />
+			<Nav
+				isLoggedIn={isLoggedIn}
+				setLogInStatus={setLogInStatus}
+				setUser={setUser}
+			/>
 
 			{/* Main Content */}
 
