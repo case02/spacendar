@@ -1,26 +1,25 @@
 // packages
-import axios from 'axios';
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 // pages
-import SignUp from './pages/SignUp';
-import LogIn from './pages/LogIn';
-import Home from './pages/Home';
-import About from './pages/About';
-import User from './pages/User';
-import Day from './pages/Day';
-import Month from './pages/Month';
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import User from "./pages/User";
+import Day from "./pages/Day";
+import Month from "./pages/Month";
 
 // components
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Comment from './components/Comment';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Comment from "./components/Comment";
 
 // utils
 
 // styles
-import './global_styles/App.css';
-
+import "./global_styles/App.css";
 
 function App() {
 	// state
@@ -69,7 +68,7 @@ function App() {
 				<Route path='/' element={<Home monthImages={monthImages} />} />
 				<Route
 					path='/user'
-					element={<User edit={setEditFormVis} userAccnt={user} />}
+					element={<User edit={setEditFormVis} user={user} setLogInStatus={setLogInStatus} />}
 				/>
 				<Route path='/month' element={<Month monthImages={monthImages} />} />
 				<Route
