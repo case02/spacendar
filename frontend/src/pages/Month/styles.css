@@ -1,7 +1,19 @@
+.days-of-week {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(7, 230px);
+}
+
+.blank-day {
+  background-color: black;
+  height: 173px;
+  width: 230px;
+}
+
 .month-cal {
   display: flex;
   flex-wrap: wrap;
-  order: 7;
+  grid-template-columns: repeat (7, 230px);
 }
 .month-cal img{
   border: 1px black solid;
@@ -41,4 +53,12 @@
   }
 .date-number p{
   color: white;
-}}
+}
+.days-of-week {
+  display: none;
+}
+ .blank-day {
+  display:none;
+ }
+
+}

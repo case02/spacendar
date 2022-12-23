@@ -31,6 +31,7 @@ function App() {
   	// requested date
   	const [date, setDate] = useState([]);
 	const [monthImages, setMonthImages] = useState([]);
+	const [media_type, setMedia_type]=useState([]);
 	//form visibility
 	const [editFormVis, setEditFormVis] = useState(false);
 	 
@@ -44,6 +45,7 @@ function App() {
 			.then((response) => response.json())
 			.then((response) => {
 				setMonthImages(response);
+				setMedia_type(response);
 			})
 			.catch(console.error);
 	}
@@ -75,7 +77,7 @@ function App() {
 					path='/user'
 					element={<User edit={setEditFormVis} user={user} setLogInStatus={setLogInStatus} />}
 				/>
-				<Route path='/month' element={<Month monthImages={monthImages} />} />
+				<Route path='/month' element={<Month monthImages={monthImages} media_type={media_type} />} />
 				<Route
 					path='/user/login'
 					element={
