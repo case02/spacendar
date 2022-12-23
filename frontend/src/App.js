@@ -1,39 +1,40 @@
 // packages
-import axios from 'axios';
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 // pages
-import SignUp from './pages/SignUp';
-import LogIn from './pages/LogIn';
-import Home from './pages/Home';
-import About from './pages/About';
-import User from './pages/User';
-import Day from './pages/Day';
-import Month from './pages/Month';
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import User from "./pages/User";
+import Day from "./pages/Day";
+import Month from "./pages/Month";
 
 // components
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Comment from './components/Comment';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Comment from "./components/Comment";
 
 // utils
 
 // styles
-import './global_styles/App.css';
-
+import "./global_styles/App.css";
 
 function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
+	const [user, setUser] = useState([]);
 	// requested image of particular date 
 	const [images, setImages] = useState([]);
   	// requested date
   	const [date, setDate] = useState([]);
 	const [monthImages, setMonthImages] = useState([]);
-
+	//form visibility
+	const [editFormVis, setEditFormVis] = useState(false);
 	 
-
+	console.log('this is app.js user', user)
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
@@ -52,11 +53,11 @@ function App() {
 				}
 				getImages();
 				
-			}, []);
+			}, [Navigate, setUser, setLogInStatus]);
 	return (
 		<div>
 			{/* Header */}
-			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+			<Nav isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser} />
 
 			{/* Main Content */}
 
@@ -66,11 +67,20 @@ function App() {
 			{/* ROUTES */}
 			<Routes>
 				<Route path='/' element={<Home monthImages={monthImages} />} />
+				<Route
+					path='/user'
+					element={<User edit={setEditFormVis} user={user} setLogInStatus={setLogInStatus} />}
+				/>
 				<Route path='/month' element={<Month monthImages={monthImages} />} />
 				<Route
 					path='/user/login'
 					element={
-						<LogIn isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+						<LogIn
+							isLoggedIn={isLoggedIn}
+							setLogInStatus={setLogInStatus}
+							setUser={setUser}
+							user={user}
+						/>
 					}
 				/>
 				<Route

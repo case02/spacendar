@@ -1,5 +1,12 @@
+// import Comment from '../components/Comment';
 export default function Day() {
     return (
-        <h1>Show Day</h1>
+        <div className="day-container">
+            {/* <Comment /> */}
+            <h1>Show Day</h1>
+        </div>
+        
     )
 }
+
+// 

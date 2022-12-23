@@ -9,6 +9,7 @@ import spacendar from '../../assets/images/spacendar.png';
 import './styles.css';
 
 export default function Nav(props) {
+
 	// state declaration: build JSX array of NavBar items
 	const initialState = [
 		<div className='nav-item' key='1'>
@@ -23,6 +24,7 @@ export default function Nav(props) {
 			</Link>
 		</div>,
 	];
+
 
 	const [navItems, setNavItems] = useState(initialState);
 
@@ -57,6 +59,7 @@ export default function Nav(props) {
 			);
 		}
 	}, [props.isLoggedIn]);
+
 
 	// render JSX
 	return <nav>{navItems}</nav>;
