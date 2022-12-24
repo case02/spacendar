@@ -1,9 +1,4 @@
-.month-container{
-    display: grid;
-    grid-row: 7;
-    
-    }
-    body {
+.month-container {
     background-color: black;
     color: white
 }
