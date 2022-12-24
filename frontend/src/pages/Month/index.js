@@ -7,7 +7,6 @@ export default function Month(props) {
 	return (
 		<div className='month-container'>
 			<h1>December</h1>
-
 			{/* <div className="wk1">
                 {props.monthImages.slice(0,7).map((a, i) => {
                     return (
@@ -30,7 +29,7 @@ export default function Month(props) {
 
 			<div className='month-cal'>
 				{props.monthImages.map((a, i) => (
-					<div className='day' className='d-flex flex-wrap align-content-xl-stretch'>
+					<div className='d-flex flex-wrap align-content-xl-stretch day'>
 						<div className='date-number'>
 							<p>{i + 1}</p>
 						</div>
@@ -38,7 +37,7 @@ export default function Month(props) {
 					</div>
 				))}
 			</div>
-			<div>
+            <div>
 				<Comment />
 			</div>
 		</div>
