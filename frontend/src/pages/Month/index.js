@@ -1,10 +1,13 @@
 import './month.css';
 import './styles.css';
+
 import wormhole from '../../assets/images/wormhole.jpg'
 
 import Comment from '../../components/Comment';
+import Day from '../Day/index';
 
 export default function Month(props) {
+
 	
 	return (
 		<div className='month-container'>
@@ -37,12 +40,14 @@ export default function Month(props) {
 				<div>Friday</div>
 				<div>Saturday</div>
 			</div>
+
 			<div className='month-cal'>
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>
 				{props.monthImages.map((a, i) => (
+
 					<div className='d-flex flex-wrap align-content-xl-stretch'>
 							<div className='date-number'>
 								<p>{i + 1}</p>
@@ -59,7 +64,8 @@ export default function Month(props) {
 					</div>
 				))}
 			</div>
-            <div>
+			<div>
+				<Day />
 				<Comment />
 			</div>
 		</div>

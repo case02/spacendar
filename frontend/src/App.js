@@ -9,13 +9,11 @@ import LogIn from "./pages/LogIn";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import User from "./pages/User";
-import Day from "./pages/Day";
 import Month from "./pages/Month";
 
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Comment from "./components/Comment";
 
 // utils
 
@@ -40,7 +38,7 @@ function App() {
 	function getImages() {
 		/* Build a URL from the searchOptions object */
     	// const key = process.env.REACT_APP_APOD_KEY;
-		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-21';  
+		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-23';  
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
