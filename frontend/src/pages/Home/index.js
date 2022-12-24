@@ -5,10 +5,6 @@ export default function Home(props) {
     console.log(props)
     return (
         <div className='day-container'>
-<<<<<<< HEAD
-=======
-        
->>>>>>> dev
             {props.monthImages.length && (
                 <div>
                     <img

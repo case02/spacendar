@@ -31,12 +31,9 @@ function App() {
   	// requested date
   	const [date, setDate] = useState([]);
 	const [monthImages, setMonthImages] = useState([]);
-<<<<<<< HEAD
 	const [media_type, setMedia_type]=useState([]);
 	//form visibility
 	const [editFormVis, setEditFormVis] = useState(false);
-=======
->>>>>>> dev
 	 
 	console.log('this is app.js user', user)
 	// APOD searcher function

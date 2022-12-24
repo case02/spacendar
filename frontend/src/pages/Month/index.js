@@ -43,19 +43,12 @@ export default function Month(props) {
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>
 				{props.monthImages.map((a, i) => (
-<<<<<<< HEAD
 					<div className='d-flex flex-wrap align-content-xl-stretch'>
 							<div className='date-number'>
 								<p>{i + 1}</p>
 							</div>
 
 						{props.monthImages[i].media_type === "image" && 
-=======
-					<div className='d-flex flex-wrap align-content-xl-stretch day'>
-						<div className='date-number'>
-							<p>{i + 1}</p>
-						</div>
->>>>>>> dev
 						<img alt='day-pic' src={props.monthImages[i].hdurl} width='230px' />
 						} 
 
