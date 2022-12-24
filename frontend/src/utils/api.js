@@ -1,5 +1,21 @@
 import axios from 'axios';
+import { useState } from 'react';
 
+
+//get info from api function 
+export function GetImages() {
+	/* Build a URL from the searchOptions object */
+	// const key = process.env.REACT_APP_APOD_KEY;
+	const [monthImages, setMonthImages] = useState([]);
+	const url =
+		'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-23';
+	fetch(url)
+		.then((response) => response.json())
+		.then((response) => {
+			setMonthImages(response);
+		})
+		.catch(console.error);
+}
 // sign up function
 export async function signUp(formData) {
 	const { data } = await axios.post(
