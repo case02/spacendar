@@ -1,8 +1,6 @@
 import './month.css';
 import './styles.css';
-import './styles.css';
 
-import Comment from '../../components/Comment';
 import Comment from '../../components/Comment';
 
 export default function Month(props) {

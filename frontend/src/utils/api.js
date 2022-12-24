@@ -7,11 +7,6 @@ export async function signUp(formData) {
     formData
   );
   return data;
-  const { data } = await axios.post(
-    "http://localhost:8000/user/signup",
-    formData
-  );
-  return data;
 }
 
 // create a comment
@@ -37,11 +32,6 @@ export async function showComment() {
 
 //Log in to User Account
 export async function loginToAccount(formData) {
-  const { data } = await axios.post(
-    "http://localhost:8000/user/login",
-    formData
-  );
-  return data;
   const { data } = await axios.post(
     "http://localhost:8000/user/login",
     formData
