@@ -20,7 +20,6 @@ export default function LogIn(props) {
                 props.setLogInStatus(true)
                 props.setUser(data.user)
             })
-
             navigate('/')
     }
 

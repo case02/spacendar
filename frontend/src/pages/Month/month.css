@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 .month-container {
+=======
+.month-container{
+    display: grid;
+    grid-row: 7;
+    
+    }
+    body {
+>>>>>>> dev
     background-color: black;
     color: white
 }
