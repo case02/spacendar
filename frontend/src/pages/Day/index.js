@@ -1,12 +1,18 @@
 // import Comment from '../components/Comment';
 import { useEffect, useState } from "react";
 import { getImages } from "../../utils/api";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import "./styles.css";
+
 
 export default function Day(props) {
 	const { date } = useParams();
 	const [theDay, setDay] = useState([]);
-	
+	const [previousDay, setPreviousDay] = useState(date);
+	const [nextDay, setNextDay] = useState(Date);
+	console.log(
+		
+	);
 
 	const findDay = async () => {
 		const day = await props.monthImages.find((item) => item.date === date);
@@ -28,11 +34,15 @@ export default function Day(props) {
     // })
 
 	return (
-		<div>
-			{theDay && (<div className='day-container'>
-				{/* <Comment /> */}
-				{/* {dayUrl.map((url) => ( <img alt={`photo of ${date}`} src={url} /> ))} */}
-				<h2> {theDay.title}</h2>
+		<div className='day-container'>
+
+			{theDay && (<div className="card">
+				<span className="card-title">
+					<Link className="nextDay" to={`/day/${theDay.id}`}> &#171; </Link>
+					<h2> {theDay.title}</h2>
+					<Link className="previousDay" to={`/day/${theDay.id}`}> &#187; </Link>
+				</span>
+				
 				<img alt={`photo of ${date}`} src={theDay.url} />
 				<p> {theDay.copyright}</p>
 				<p> Explanation: {theDay.explanation}</p>

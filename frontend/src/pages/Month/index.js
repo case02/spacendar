@@ -66,7 +66,6 @@ export default function Month(props) {
 				))}
 			</div>
 			<div>
-				<Day />
 				<Comment />
 			</div>
 		</div>
