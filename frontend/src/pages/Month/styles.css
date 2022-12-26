@@ -1,0 +1,64 @@
+.days-of-week {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(7, 230px);
+}
+
+.blank-day {
+  background-color: black;
+  height: 173px;
+  width: 230px;
+}
+
+.month-cal {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat (7, 230px);
+}
+.month-cal img{
+  border: 1px black solid;
+}
+.date-number {
+  position: absolute;
+  padding: 0.8em 0.5em 2em 1em;
+  margin: 1em 1em;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0,0,0, 0.7);
+}
+
+.date-number p {
+  color: white;
+}
+
+@media (max-width: 500px) { 
+  .month-cal {
+  display: flex;
+  flex-direction: column;
+}
+  .month-cal img{
+    width: 100%;
+    height: 80%;
+    border: 1px black solid;
+  }
+  .date-number {
+    position: absolute;
+    padding: 0.8em 0.5em 2em 1em;
+    margin: 1em 1em;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(0,0,0, 0.7);
+  }
+.date-number p{
+  color: white;
+}
+.days-of-week {
+  display: none;
+}
+ .blank-day {
+  display:none;
+ }
+
+}

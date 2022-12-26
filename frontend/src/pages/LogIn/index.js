@@ -18,6 +18,7 @@ export default function LogIn(props) {
             .then((data) => {
                 localStorage.token = data.token;
                 props.setLogInStatus(true)
+                props.setUser(data.user)
             })
             navigate('/')
     }
