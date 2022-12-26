@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import User from "./pages/User";
 import Month from "./pages/Month";
+import Day from "./pages/Day";
 
 // components
 import Nav from "./components/Nav";
@@ -24,21 +25,18 @@ function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
 	const [user, setUser] = useState([]);
-	// requested image of particular date 
-	const [images, setImages] = useState([]);
-  	// requested date
-  	const [date, setDate] = useState([]);
+	// const { day, setDay } = useState({});
+	// Api data
 	const [monthImages, setMonthImages] = useState([]);
-	const [media_type, setMedia_type]=useState([]);
-	//form visibility
-	const [editFormVis, setEditFormVis] = useState(false);
-	 
-	console.log('this is app.js user', user)
+	const [media_type, setMedia_type] = useState([]);
+	console.log('app loggedIn is', isLoggedIn);
+	console.log('this is token', localStorage.token);
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
-    	// const key = process.env.REACT_APP_APOD_KEY;
-		const url = 'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-23';  
+		// const key = process.env.REACT_APP_APOD_KEY;
+		const url =
+			'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-26';
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -48,12 +46,11 @@ function App() {
 			.catch(console.error);
 	}
 	useEffect(() => {
-				if (localStorage.token) {
-					setLogInStatus(true);
-				}
-				getImages();
-				
-			}, [Navigate, setUser, setLogInStatus]);
+		if (localStorage.token) {
+			setLogInStatus(true);
+		}
+		getImages();
+	}, [Navigate, setUser, setLogInStatus]);
 	return (
 		<div>
 			{/* Header */}
@@ -66,7 +63,7 @@ function App() {
 			{/* Main Content */}
 
 			{/* Footer */}
-			<Footer />
+			{/* <Footer /> */}
 
 			{/* ROUTES */}
 			<Routes>
@@ -75,7 +72,14 @@ function App() {
 					path='/user'
 					element={<User user={user} setLogInStatus={setLogInStatus} />}
 				/>
-				<Route path='/month' element={<Month monthImages={monthImages} media_type={media_type} />} />
+				<Route
+					path='/month'
+					element={<Month monthImages={monthImages} media_type={media_type} />}
+				/>
+				<Route
+					path='/day/:date'
+					element={<Day monthImages={monthImages} media_type={media_type} />}
+				/>
 				<Route
 					path='/user/login'
 					element={
