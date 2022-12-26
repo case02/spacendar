@@ -25,12 +25,10 @@ function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
 	const [user, setUser] = useState([]);
-	// const { day, setDay } = useState({});
 	// Api data
 	const [monthImages, setMonthImages] = useState([]);
 	const [media_type, setMedia_type] = useState([]);
-	console.log('app loggedIn is', isLoggedIn);
-	console.log('this is token', localStorage.token);
+
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
@@ -45,12 +43,14 @@ function App() {
 			})
 			.catch(console.error);
 	}
+	//useEffect 
 	useEffect(() => {
-		if (localStorage.token) {
-			setLogInStatus(true);
-		}
+		// if (localStorage.token) {
+		// 	setLogInStatus(true);
+		// }
 		getImages();
 	}, [Navigate, setUser, setLogInStatus]);
+
 	return (
 		<div>
 			{/* Header */}
@@ -59,8 +59,6 @@ function App() {
 				setLogInStatus={setLogInStatus}
 				setUser={setUser}
 			/>
-
-			{/* Main Content */}
 
 			{/* Footer */}
 			{/* <Footer /> */}

@@ -65,7 +65,7 @@ export default function Month(props) {
 					</Link>
 				))}
 			</div>
-			<div>
+			<div className="comment-section">
 				<Comment />
 			</div>
 		</div>
