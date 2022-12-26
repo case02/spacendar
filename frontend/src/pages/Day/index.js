@@ -4,7 +4,19 @@ import { getImages } from "../../utils/api";
 import { useParams } from "react-router-dom";
 
 export default function Day(props) {
-	// const [currentDay, setCurrentDay] = useState({});
+	const { date } = useParams();
+	const [theDay, setDay] = useState([]);
+	
+
+	const findDay = async () => {
+		const day = await props.monthImages.find((item) => item.date === date);
+		return setDay(day);
+	};
+
+	useEffect(() => {
+		if (date) findDay()	
+	}, [theDay]);
+
 
 	// // access the URL `id` parameter and convert it to an integer
 	// let { id } = useParams();
@@ -16,12 +28,15 @@ export default function Day(props) {
     // })
 
 	return (
-		<div className='day-container'>
-	 		{/* <Comment /> */}
-			<h1>Show Day</h1>
-            {/* <p> {currentDay.copyright} </p>*/}
-			{/* <h2> {currentDay.title}</h2>
-            <p>{currentDay</p> */}
+		<div>
+			{theDay && (<div className='day-container'>
+				{/* <Comment /> */}
+				{/* {dayUrl.map((url) => ( <img alt={`photo of ${date}`} src={url} /> ))} */}
+				<h2> {theDay.title}</h2>
+				<img alt={`photo of ${date}`} src={theDay.url} />
+				<p> {theDay.copyright}</p>
+				<p> Explanation: {theDay.explanation}</p>
+			</div>) }
 		</div>
 	);
 }

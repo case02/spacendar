@@ -55,7 +55,7 @@ export default function Comment(props) {
 						}}>
 						Leave a comment
 					</button>
-					{showForm && (
+					{showForm ? (
 						<form>
 							<input
 								name='comment'
@@ -70,7 +70,7 @@ export default function Comment(props) {
 								Comment
 							</button>
 						</form>
-					)}
+					) : null}
 				</div>
 				<div className='display-comments'>
 					<h1>Comments</h1>

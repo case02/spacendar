@@ -9,7 +9,6 @@ import spacendar from '../../assets/images/spacendar.png';
 import './styles.css';
 
 export default function Nav(props) {
-
 	// state declaration: build JSX array of NavBar items
 	const initialState = [
 		<div className='nav-item' key='1'>
@@ -35,7 +34,7 @@ export default function Nav(props) {
 				initialState.concat(
 					<div className='nav-item' key='3'>
 						<Button
-							class='btn btn-outline-light btn-lg'
+							className='btn btn-outline-light btn-lg'
 							onClick={() => {
 								props.setLogInStatus(false);
 							}}>
@@ -49,10 +48,10 @@ export default function Nav(props) {
 				initialState.concat([
 					<div className='nav-item' key='3'>
 						<Link to='/user/signup'>
-							<Button class='btn btn-outline-light btn-lg'>Sign Up</Button>
+							<Button className='btn btn-outline-light btn-lg'>Sign Up</Button>
 						</Link>
 						<Link to='/user/login'>
-							<Button class='btn btn-outline-light btn-lg'>Log In</Button>
+							<Button className='btn btn-outline-light btn-lg'>Log In</Button>
 						</Link>
 					</div>,
 				])
