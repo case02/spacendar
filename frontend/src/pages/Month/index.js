@@ -1,26 +1,23 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
-
 import wormhole from '../../assets/images/wormhole.jpg';
-
 import Comment from '../../components/Comment';
-import Day from '../Day/index';
+
 
 export default function Month(props) {
 	return (
-	<div className='month-container'>
-			<h1>December</h1>
-			<div className='days-of-week'>
-				<div>Sunday</div>
-				<div>Monday</div>
-				<div>Tuesday</div>
-				<div>Wednesday</div>
-				<div>Thursday</div>
-				<div>Friday</div>
-				<div>Saturday</div>
-			</div>
-
+		<div className='month-container'>
 			<div className='month-cal'>
+				<h1>December</h1>
+				<div className='days-of-week'>
+					<div>Sunday</div>
+					<div>Monday</div>
+					<div>Tuesday</div>
+					<div>Wednesday</div>
+					<div>Thursday</div>
+					<div>Friday</div>
+					<div>Saturday</div>
+				</div>
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>
 				<div className='blank-day'></div>

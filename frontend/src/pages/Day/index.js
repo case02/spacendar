@@ -14,6 +14,8 @@ export default function Day(props) {
 		previous: '',
 		next: '',
 	});
+	//when day is 01 previous day link is false
+	const [showPrev, setShowPrev] = useState(true);
 
 	// modify date parameter to add/sub a day
 	// refered to https://stackoverflow.com/questions/67291965/add-and-rest-one-day-to-date-string for solution
@@ -25,7 +27,15 @@ export default function Day(props) {
 		// could use date.toISOString or date.toJson to convert date to string; decides date format
 		return newDate.toISOString().split('T')[0];
 	}
-
+	//show previous day unless its the first day of the month
+	function showPrevious() {
+		console.log(dateState.current);
+		if (date === '2022-12-01') {
+			setShowPrev(false);
+		} else {
+			setShowPrev(true);
+		}
+	}
 	const findDay = async () => {
 		const day = await props.monthImages.find((item) => item.date === date);
 		return setDay(day);
@@ -38,12 +48,14 @@ export default function Day(props) {
 			findDay();
 		}
 		if (theDay.media_type === 'image') {
-			setMediaSource(<img alt={`photo of ${date}`} src={theDay.url} />);
+			setMediaSource(
+				<img className='card-img' alt={`photo of ${date}`} src={theDay.url} />
+			);
 		} else {
 			setMediaSource(
-				<div class='embed-responsive embed-responsive-16by9'>
+				<div className='card-img embed-responsive embed-responsive-16by9'>
 					<iframe
-						class='embed-responsive-item'
+						className='embed-responsive-item'
 						width='80%'
 						height='500vh'
 						src={theDay.url}
@@ -53,6 +65,7 @@ export default function Day(props) {
 				</div>
 			);
 		}
+		showPrevious();
 		setDateState({
 			current: date,
 			previous: modifyDate(date, -1),
@@ -64,21 +77,26 @@ export default function Day(props) {
 		<div className='day-container'>
 			{theDay && (
 				<div className='card'>
-					<span className='card-title'>
-						<Link className='previousDay' to={`/day/${dateState.previous}`}>
+					<div className="card-body">
+						<div class='card-header'>
+						{showPrev ? <Link
+							className='day-link previousDay'
+							to={`/day/${dateState.previous}`}>
 							{' '}
 							&#171;{' '}
-						</Link>
-						<h2> {theDay.title}</h2>
-						<Link className='nextDay' to={`/day/${dateState.next}`}>
+						</Link> : null}
+						<h1 className="card-title">  {theDay.title}  </h1>
+						<Link className='day-link nextDay' to={`/day/${dateState.next}`}>
 							{' '}
 							&#187;{' '}
 						</Link>
-					</span>
-					{mediaSource}
-					<p> {theDay.copyright}</p>
-					<p> Explanation: {theDay.explanation}</p>
+						</div>
+						{mediaSource}
+						<p class='card-text'> {theDay.copyright}</p>
+						<p class='card-text'> Explanation: {theDay.explanation}</p>
+					</div>
 				</div>
+					
 			)}
 		</div>
 	);
