@@ -1,9 +1,8 @@
 // import Comment from '../components/Comment';
-import { useEffect, useState } from "react";
-import { getImages } from "../../utils/api";
-import { useParams, Link } from "react-router-dom";
-import "./styles.css";
-
+import { useEffect, useState } from 'react';
+import { getImages } from '../../utils/api';
+import { useParams, Link } from 'react-router-dom';
+import './styles.css';
 
 export default function Day(props) {
 	const { date } = useParams();
@@ -23,18 +22,36 @@ export default function Day(props) {
 		const newDate = new Date(`${input} 00:00`);
 		// add the dayModification value as days to the date
 		newDate.setDate(newDate.getDate() + dayModification);
-		// could use date.toISOString or date.toJson to convert date to string; decides date format 
+		// could use date.toISOString or date.toJson to convert date to string; decides date format
 		return newDate.toISOString().split('T')[0];
 	}
-	
+
 	const findDay = async () => {
 		const day = await props.monthImages.find((item) => item.date === date);
 		return setDay(day);
 	};
 
+	const [mediaSource, setMediaSource] = useState([]);
+
 	useEffect(() => {
 		if (date) {
 			findDay();
+		}
+		if (theDay.media_type === 'image') {
+			setMediaSource(<img alt={`photo of ${date}`} src={theDay.url} />);
+		} else {
+			setMediaSource(
+				<div class='embed-responsive embed-responsive-16by9'>
+					<iframe
+						class='embed-responsive-item'
+						width='80%'
+						height='500vh'
+						src={theDay.url}
+						title='YouTube video player'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+						allowfullscreen></iframe>
+				</div>
+			);
 		}
 		setDateState({
 			current: date,
@@ -48,7 +65,7 @@ export default function Day(props) {
 			{theDay && (
 				<div className='card'>
 					<span className='card-title'>
-						<Link className='previoustDay' to={`/day/${dateState.previous}`}>
+						<Link className='previousDay' to={`/day/${dateState.previous}`}>
 							{' '}
 							&#171;{' '}
 						</Link>
@@ -58,8 +75,7 @@ export default function Day(props) {
 							&#187;{' '}
 						</Link>
 					</span>
-
-					<img alt={`photo of ${date}`} src={theDay.url} />
+					{mediaSource}
 					<p> {theDay.copyright}</p>
 					<p> Explanation: {theDay.explanation}</p>
 				</div>

@@ -1,3 +1,10 @@
+
+.card {
+    width: 80%;
+    background-color: black;
+    color: white;
+}
+
 .card-title {
     display: flex;
     justify-content: space-between;
