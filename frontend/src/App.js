@@ -45,9 +45,9 @@ function App() {
 	}
 	//useEffect 
 	useEffect(() => {
-		// if (localStorage.token) {
-		// 	setLogInStatus(true);
-		// }
+		if (localStorage.token) {
+			setLogInStatus(true);
+		}
 		getImages();
 	}, [Navigate, setUser, setLogInStatus]);
 

@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+.logo {
+  max-width: 400px;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -18,12 +21,6 @@ nav .nav-item:nth-of-type(1) a {
   justify-content: center;
   text-decoration: none;
   color: rgb(211, 173, 152)
-}
-
-nav .nav-item:nth-of-type(2) a {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }
 
 

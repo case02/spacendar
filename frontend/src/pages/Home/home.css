@@ -3,7 +3,7 @@ body {
 }
 .day-container img {
     object-fit: cover;
-    max-width: 100%;
+    max-width: 100vw;
     height: 105vh;
 }
 
