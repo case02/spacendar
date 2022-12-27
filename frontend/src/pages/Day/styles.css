@@ -1,11 +1,23 @@
 
+.day-container {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    z-index: 10;
+    position: relative;
+    max-width: 180vh;
+    margin-bottom: 110px;
+}
+
 .card {
     width: 80%;
     background-color: black;
-    color: white;
+    color: black;
 }
 
 .card-title {
     display: flex;
     justify-content: space-between;
+    color: black;
 }

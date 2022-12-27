@@ -61,7 +61,7 @@ function App() {
 			/>
 
 			{/* Footer */}
-			{/* <Footer /> */}
+			<Footer />
 
 			{/* ROUTES */}
 			<Routes>

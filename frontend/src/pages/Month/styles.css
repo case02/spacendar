@@ -4,6 +4,15 @@
   grid-template-columns: repeat(7, 230px);
 }
 
+.month-container {
+  height:130vh;
+  background-color: black;
+  color: white;
+  z-index: 10;
+  position: relative;
+  margin-bottom: 100px;
+}
+
 .blank-day {
   background-color: black;
   height: 173px;
