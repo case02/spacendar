@@ -16,6 +16,8 @@ export default function Day(props) {
 	});
 	//when day is 01 previous day link is false
 	const [showPrev, setShowPrev] = useState(true);
+	//when day is 31 next day link is false
+	const [showNext, setShowNext] = useState(true);
 
 	// modify date parameter to add/sub a day
 	// refered to https://stackoverflow.com/questions/67291965/add-and-rest-one-day-to-date-string for solution
@@ -28,12 +30,18 @@ export default function Day(props) {
 		return newDate.toISOString().split('T')[0];
 	}
 	//show previous day unless its the first day of the month
-	function showPrevious() {
+	//show next day unless its the last day of the month
+	function showLink() {
 		console.log(dateState.current);
 		if (date === '2022-12-01') {
 			setShowPrev(false);
 		} else {
 			setShowPrev(true);
+		}
+		if (date === '2022-12-31') {
+			setShowNext(false);
+		} else {
+			setShowNext(true);
 		}
 	}
 	const findDay = async () => {
@@ -65,7 +73,7 @@ export default function Day(props) {
 				</div>
 			);
 		}
-		showPrevious();
+		showLink();
 		setDateState({
 			current: date,
 			previous: modifyDate(date, -1),
@@ -77,26 +85,27 @@ export default function Day(props) {
 		<div className='day-container'>
 			{theDay && (
 				<div className='card'>
-					<div className="card-body">
+					<div className='card-body'>
 						<div class='card-header'>
-						{showPrev ? <Link
-							className='day-link previousDay'
-							to={`/day/${dateState.previous}`}>
-							{' '}
-							&#171;{' '}
-						</Link> : null}
-						<h1 className="card-title">  {theDay.title}  </h1>
-						<Link className='day-link nextDay' to={`/day/${dateState.next}`}>
-							{' '}
-							&#187;{' '}
-						</Link>
+							{showPrev ? (
+								<Link
+									className='day-link previousDay'
+									to={`/day/${dateState.previous}`}>
+									{' '}
+									&#171;{' '}
+								</Link>
+							) : null }
+							<h1 className='card-title'> {theDay.title} </h1>
+							{showNext ?<Link className='day-link nextDay' to={`/day/${dateState.next}`}>
+								{' '}
+								&#187;{' '}
+							</Link> : null }
 						</div>
 						{mediaSource}
 						<p class='card-text'> {theDay.copyright}</p>
 						<p class='card-text'> Explanation: {theDay.explanation}</p>
 					</div>
 				</div>
-					
 			)}
 		</div>
 	);
