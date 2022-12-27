@@ -6,12 +6,11 @@ export default function Home(props) {
     return (
         <div className='day-container'>
             {props.monthImages.length && (
-                <div>
+                <div class="home">
                     <img
                         alt='current-day'
                         src={props.monthImages[props.monthImages.length - 1].hdurl}
                     />
-                    <div>{props.monthImages[props.monthImages.length - 1].date}</div>
                 </div>
             )}
         </div>

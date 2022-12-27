@@ -1,9 +1,10 @@
 // packages
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import Button from 'react-bootstrap/Button';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import spacendar from '../../assets/images/spacendar.png';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 // styles
 import './styles.css';
@@ -19,11 +20,10 @@ export default function Nav(props) {
 
 		<div className='nav-item' key='2'>
 			<Link to='/'>
-				<img alt='Spacendar' className='logo' src={spacendar} width='400px' />
+				<img alt='Spacendar' className='logo' src={spacendar} />
 			</Link>
 		</div>,
 	];
-
 
 	const [navItems, setNavItems] = useState(initialState);
 
@@ -32,34 +32,43 @@ export default function Nav(props) {
 		if (props.isLoggedIn) {
 			setNavItems(
 				initialState.concat(
-					<div className='nav-item' key='3'>
-						<Button
-							className='btn btn-outline-light btn-lg'
-							onClick={() => {
-								props.setLogInStatus(false);
-							}}>
-							Log Out
-						</Button>
-					</div>
+					<Dropdown>
+						<Dropdown.Toggle variant='success' id='dropdown-basic'>
+							Settings
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item
+								href='/'
+								onClick={() => {
+									props.setLogInStatus(false);
+								}}>
+								Logout
+							</Dropdown.Item>
+							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
 				)
 			);
 		} else {
 			setNavItems(
 				initialState.concat([
-					<div className='nav-item' key='3'>
-						<Link to='/user/signup'>
-							<Button className='btn btn-outline-light btn-lg'>Sign Up</Button>
-						</Link>
-						<Link to='/user/login'>
-							<Button className='btn btn-outline-light btn-lg'>Log In</Button>
-						</Link>
-					</div>,
+					<Dropdown className='nav-item' key='3'>
+						<Dropdown.Toggle variant='success' id='dropdown-basic'>
+							Settings
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item href='/user/signup'>Sign Up</Dropdown.Item>
+							<Dropdown.Item href='/user/login'>Login</Dropdown.Item>
+							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>,
 				])
 			);
 		}
 	}, [props.isLoggedIn]);
 
-
 	// render JSX
-	return <nav>{navItems}</nav>;
+	return <nav class='navbar navbar-expand-lg'>{navItems}</nav>;
 }
