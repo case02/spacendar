@@ -10,6 +10,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import './styles.css';
 
 export default function Nav(props) {
+	//logout handle
+	const handleLogout = () => {
+		props.setUser({});
+		// setUsername('');
+		// setPassword('');
+		localStorage.clear();
+	};
 	// state declaration: build JSX array of NavBar items
 	const initialState = [
 		<div className='nav-item' key='1'>
@@ -42,6 +49,7 @@ export default function Nav(props) {
 								href='/'
 								onClick={() => {
 									props.setLogInStatus(false);
+									handleLogout();
 								}}>
 								Logout
 							</Dropdown.Item>

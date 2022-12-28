@@ -19,6 +19,7 @@ export default function LogIn(props) {
                 localStorage.token = data.token;
                 props.setLogInStatus(true)
                 props.setUser(data.user)
+                console.log('this is login user',data.user)
             })
             navigate('/')
     }
