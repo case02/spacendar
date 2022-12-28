@@ -9,6 +9,15 @@ export async function signUp(formData) {
   return data;
 }
 
+//Log in to User Account
+export async function loginToAccount(formData) {
+  const { data } = await axios.post(
+    "http://localhost:8000/user/login",
+    formData
+  );
+  return data;
+}
+
 // create a comment
 export async function createComment(formData) {
   const config = {
@@ -30,14 +39,7 @@ export async function showComment() {
   return data;
 }
 
-//Log in to User Account
-export async function loginToAccount(formData) {
-  const { data } = await axios.post(
-    "http://localhost:8000/user/login",
-    formData
-  );
-  return data;
-}
+
 
 // update user account
 export async function updateUser(userId, formData) {
@@ -51,7 +53,7 @@ export async function updateUser(userId, formData) {
     formData,
     config
   );
-  return data;
+  return data
 }
 
 // delet user account

@@ -10,6 +10,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import './styles.css';
 
 export default function Nav(props) {
+	//logout handle
+	const handleLogout = () => {
+		props.setUser({});
+		// setUsername('');
+		// setPassword('');
+		localStorage.clear();
+	};
 	// state declaration: build JSX array of NavBar items
 	const initialState = [
 		<div className='nav-item' key='1'>
@@ -35,8 +42,10 @@ export default function Nav(props) {
 			setNavItems(
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
+
 						<Dropdown.Toggle variant='secondary' id='dropdown-basic'>
 						{/* &#8801; */}
+
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
@@ -44,6 +53,7 @@ export default function Nav(props) {
 								href='/'
 								onClick={() => {
 									props.setLogInStatus(false);
+									handleLogout();
 								}}>
 								Logout
 							</Dropdown.Item>

@@ -17,7 +17,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 // utils
-
+import { getUser } from './utils/api';
 // styles
 import "./global_styles/App.css";
 
@@ -47,10 +47,17 @@ function App() {
 	useEffect(() => {
 		if (localStorage.token) {
 			setLogInStatus(true);
+			try {getUser(localStorage.user_Id)
+                .then((foundUser) => {
+					setUser(foundUser.user);
+				})
+			} catch (error) {
+                console.log(error);
+			};
 		}
 		getImages();
-	}, [Navigate, setUser, setLogInStatus]);
-
+	}, []);
+// Navigate, setUser, setLogInStatus
 	return (
 		<div>
 			{/* Header */}
@@ -92,7 +99,7 @@ function App() {
 				<Route
 					path='/user/signup'
 					element={
-						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser}/>
 					}
 				/>
 				{/* <Route path='/user/:id' element={<User />} /> */}
