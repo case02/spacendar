@@ -22,7 +22,7 @@ export default function Nav(props) {
 		<div className='nav-item' key='1'>
 			<Link to='/month'>
 				<div className="month-button">
-				<a>Month</a>
+				<p>Month</p>
 				</div>
 			</Link>
 		</div>,
