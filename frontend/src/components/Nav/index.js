@@ -36,7 +36,7 @@ export default function Nav(props) {
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
 						<Dropdown.Toggle variant='secondary' id='dropdown-basic'>
-							Settings
+						{/* &#8801; */}
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
@@ -47,6 +47,7 @@ export default function Nav(props) {
 								}}>
 								Logout
 							</Dropdown.Item>
+							<Dropdown.Divider />
 							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
@@ -63,6 +64,7 @@ export default function Nav(props) {
 						<Dropdown.Menu>
 							<Dropdown.Item href='/user/signup'>Sign Up</Dropdown.Item>
 							<Dropdown.Item href='/user/login'>Login</Dropdown.Item>
+							<Dropdown.Divider />
 							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>,

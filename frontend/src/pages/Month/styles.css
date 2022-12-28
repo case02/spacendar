@@ -3,13 +3,13 @@
 .month-container {
   display: flex;
   flex-direction: column;
-  height:130vh;
   background-color: black;
   color: white;
   z-index: 10;
   position: relative;
   margin-bottom: 100px;
   max-width: 120em;
+  justify-content: center;
 }
 
 .month-container h1 {
@@ -46,6 +46,19 @@
 
 .date-number p {
   color: white;
+}
+.day-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 200px;
+  max-height: 200px;
+}
+.day-content img {
+  flex-shrink: 0;
+  min-width: 200px;
+  min-height: 200px;
 }
 
 @media (max-width: 500px) { 

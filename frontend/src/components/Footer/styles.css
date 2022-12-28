@@ -34,6 +34,7 @@ footer .link:hover {
 
 @media (max-width: 500px) { 
 	footer{
+	display: show;
 	position: fixed;
 	left: 0;
 	bottom: 0;
