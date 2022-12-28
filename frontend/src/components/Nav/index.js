@@ -41,7 +41,7 @@ export default function Nav(props) {
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
 						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							Settings
+							<img alt='user icon' src='../assets/images/user.png' />
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
