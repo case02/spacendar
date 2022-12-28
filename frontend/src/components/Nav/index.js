@@ -42,10 +42,8 @@ export default function Nav(props) {
 			setNavItems(
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
-
 						<Dropdown.Toggle variant='secondary' id='dropdown-basic'>
 						{/* &#8801; */}
-
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
@@ -67,8 +65,8 @@ export default function Nav(props) {
 			setNavItems(
 				initialState.concat([
 					<Dropdown className='nav-item' key='3'>
-						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							Settings
+						<Dropdown.Toggle variant='primary' id='dropdown-basic'>
+						
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
