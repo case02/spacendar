@@ -21,7 +21,9 @@ export default function Nav(props) {
 	const initialState = [
 		<div className='nav-item' key='1'>
 			<Link to='/month'>
-				<h1>Month</h1>
+				<div className="month-button">
+				<a>Month</a>
+				</div>
 			</Link>
 		</div>,
 
@@ -40,8 +42,10 @@ export default function Nav(props) {
 			setNavItems(
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
-						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							<img alt='user icon' src='../assets/images/user.png' />
+
+						<Dropdown.Toggle variant='secondary' id='dropdown-basic'>
+						{/* &#8801; */}
+
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
@@ -53,6 +57,7 @@ export default function Nav(props) {
 								}}>
 								Logout
 							</Dropdown.Item>
+							<Dropdown.Divider />
 							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
@@ -69,6 +74,7 @@ export default function Nav(props) {
 						<Dropdown.Menu>
 							<Dropdown.Item href='/user/signup'>Sign Up</Dropdown.Item>
 							<Dropdown.Item href='/user/login'>Login</Dropdown.Item>
+							<Dropdown.Divider />
 							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>,
@@ -79,4 +85,5 @@ export default function Nav(props) {
 
 	// render JSX
 	return <nav className='navbar navbar-expand-lg'>{navItems}</nav>;
+	
 }
