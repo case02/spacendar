@@ -13,8 +13,12 @@ export default function Footer() {
 				My Account
 			</Link>
 			<h5>Contributors: </h5>
-			<h6>Lianne Aratea, Pierce Goldbeck, Jordan Lind, and Casey Stocker</h6>
-					
+			<h6>
+				<a href='https://github.com/lianneb10'>Lianne Aratea</a>,
+				<a href='https://github.com/piercegoldbeck'>Pierce Goldbeck</a>,
+				<a href='https://github.com/gititgrl'>Jordan Lind</a>, and
+				<a href='https://github.com/case02'>Casey Stocker</a>
+			</h6>
 		</footer>
 	);
 }
