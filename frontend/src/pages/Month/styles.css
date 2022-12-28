@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 .month-container {
   display: flex;
@@ -13,6 +14,7 @@
 
 .month-container h1 {
   text-align: center;
+  font-family: 'Orbitron';
 }
 
 
@@ -68,9 +70,7 @@
 .date-number p{
   color: white;
 }
-.days-of-week {
-  display: none;
-}
+
  .blank-day {
   display:none;
  }
