@@ -1,11 +1,10 @@
 // packages
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 // utils
-import { createComment, getUser, showComment } from '../../utils/api';
+import { createComment, showComment } from '../../utils/api';
 
 export default function Comment(props) {
-	const [formData, setFormData] = useState({ comment: "" });
+	const [formData, setFormData] = useState({ comment: '' });
 	const [showForm, setShowForm] = useState(false);
 	const [comments, setComments] =useState([]);
 	const [displayComments, setDisplayComments] = useState(false)
@@ -29,23 +28,13 @@ export default function Comment(props) {
 		createComment(formData).then(() => getComments()).finally(() => setFormData({ comment: "" }));
 	}
 
-	// const navigate = useNavigate();
-	// const navigate = useNavigate();
-
-	// redirect to home page if not logged in
-	// useEffect(() => {
-	// 	if (!props.isLoggedIn) {
-	// 		navigate('/');
-	// 	}
-	// }, [props.isLoggedIn]);
-
-
+	
 	// render JSX
 	return (
 		<div className='comment-container'>	
-			{!displayComments ? <div className="">
+			<div className="">
 				<button className="btn btn-primary" onClick={()=>{setDisplayComments(!displayComments)}}>comments</button>
-			</div> : null}
+			</div>
 			{displayComments ? <div className="comment-display">
 				<div className='comment-form'>
 					<button
@@ -75,10 +64,10 @@ export default function Comment(props) {
 				<div className='display-comments'>
 					<h1>Comments</h1>
 					{console.log(comments)}
-					{comments.map((comment) => (
-						<div>
-							User: {comment.user.username}: {comment.comment}
-						</div>
+					{comments.map((comment, i) => (
+						
+						<div key={i}> {comment.user?.username || 'Anonymous'}: {comment.comment}</div>
+
 					))}
 				</div>
 			</div> : null}

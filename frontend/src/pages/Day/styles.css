@@ -1,4 +1,31 @@
-.card-title {
+
+.day-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    z-index: 10;
+    position: relative;
+    max-width: 180vh;
+    margin-bottom: 110px;
+}
+
+.card {
+    margin-top: 50px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
+}
+.card-title {
+    margin: 0 20px;
+}
+.day-link{
+    color: white;
+    text-decoration: none;
+    font-size:xx-large;
 }

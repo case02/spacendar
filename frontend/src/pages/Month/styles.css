@@ -1,19 +1,35 @@
-.days-of-week {
-  display: grid;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(7, 230px);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.month-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  z-index: 10;
+  position: relative;
+  margin-bottom: 100px;
+  max-width: 120em;
+  justify-content: center;
 }
 
-.blank-day {
-  background-color: black;
-  height: 173px;
-  width: 230px;
+.month-container h1 {
+  text-align: center;
+  font-family: 'Orbitron';
 }
+
 
 .month-cal {
   display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat (7, 150px);
+  max-width: 120em;
+}
+
+.day-map {
+  display: flex;
   flex-wrap: wrap;
-  grid-template-columns: repeat (7, 230px);
+  grid-template-columns: repeat (7, 150px);
+  max-width: 120em;
 }
 .month-cal img{
   border: 1px black solid;
@@ -30,6 +46,19 @@
 
 .date-number p {
   color: white;
+}
+.day-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 200px;
+  max-height: 200px;
+}
+.day-content img {
+  flex-shrink: 0;
+  min-width: 200px;
+  min-height: 200px;
 }
 
 @media (max-width: 500px) { 
@@ -54,9 +83,7 @@
 .date-number p{
   color: white;
 }
-.days-of-week {
-  display: none;
-}
+
  .blank-day {
   display:none;
  }

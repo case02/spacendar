@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {updateUser} from "../../utils/api";
 import {deleteUser} from "../../utils/api";
 import { useNavigate } from 'react-router-dom';
@@ -11,8 +11,12 @@ export default function User(prop) {
 	const [showForm, setShowForm] = useState(false);
 	const [deletPopUp, setDeletPopUp] = useState(false);
 	// edit form and changed states
-	const [formState, setFormState] = useState(prop.user);
-
+	const [formState, setFormState] = useState({ username: '', password: '' });
+	useEffect(() => {
+		setFormState(prop.user);
+	},[showForm])
+	
+	
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
@@ -20,19 +24,20 @@ export default function User(prop) {
 	const handleSubmitUpdateUser = (event) => {
 		event.preventDefault();
 		updateUser(prop.user._id, formState)
-		prop.edit(false);
-		navigate('/user/login');
+		setShowForm(false);
+		navigate('/user');
 	};
 	// delete user function
 	const destroyUser = () => {
 		alert('Do you want to delete this user?');
 		deleteUser(prop.user._id);
+		localStorage.clear();
 		prop.setLogInStatus(false);
 		navigate('/');
 	};
 	
 
-    console.log('this is the userpage user', prop.user)
+    console.log('this is the userpage formState', formState);
 	return (
 		<div className='display-body'>
 			<div className='delete'>
@@ -61,7 +66,7 @@ export default function User(prop) {
 				) : null}
 			</div>
 
-			<div clasName='edit'>
+			<div className='edit'>
 				<div className='form-btn'>
 					<button
 						id='edit-btn'

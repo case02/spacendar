@@ -17,7 +17,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 // utils
-
+import { getUser } from './utils/api';
 // styles
 import "./global_styles/App.css";
 
@@ -25,12 +25,10 @@ function App() {
 	// state
 	const [isLoggedIn, setLogInStatus] = useState(false);
 	const [user, setUser] = useState([]);
-	// const { day, setDay } = useState({});
 	// Api data
 	const [monthImages, setMonthImages] = useState([]);
 	const [media_type, setMedia_type] = useState([]);
-	console.log('app loggedIn is', isLoggedIn);
-	console.log('this is token', localStorage.token);
+
 	// APOD searcher function
 	function getImages() {
 		/* Build a URL from the searchOptions object */
@@ -45,12 +43,21 @@ function App() {
 			})
 			.catch(console.error);
 	}
+	//useEffect 
 	useEffect(() => {
 		if (localStorage.token) {
 			setLogInStatus(true);
+			try {getUser(localStorage.user_Id)
+                .then((foundUser) => {
+					setUser(foundUser.user);
+				})
+			} catch (error) {
+                console.log(error);
+			};
 		}
 		getImages();
-	}, [Navigate, setUser, setLogInStatus]);
+	}, []);
+// Navigate, setUser, setLogInStatus
 	return (
 		<div>
 			{/* Header */}
@@ -60,10 +67,8 @@ function App() {
 				setUser={setUser}
 			/>
 
-			{/* Main Content */}
-
 			{/* Footer */}
-			{/* <Footer /> */}
+			<Footer />
 
 			{/* ROUTES */}
 			<Routes>
@@ -94,7 +99,7 @@ function App() {
 				<Route
 					path='/user/signup'
 					element={
-						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} />
+						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser}/>
 					}
 				/>
 				{/* <Route path='/user/:id' element={<User />} /> */}
