@@ -32,7 +32,7 @@ export default function Nav(props) {
 		if (props.isLoggedIn) {
 			setNavItems(
 				initialState.concat(
-					<Dropdown>
+					<Dropdown className='nav-item' key='3'>
 						<Dropdown.Toggle variant='success' id='dropdown-basic'>
 							Settings
 						</Dropdown.Toggle>
@@ -70,5 +70,5 @@ export default function Nav(props) {
 	}, [props.isLoggedIn]);
 
 	// render JSX
-	return <nav class='navbar navbar-expand-lg'>{navItems}</nav>;
+	return <nav className='navbar navbar-expand-lg'>{navItems}</nav>;
 }
