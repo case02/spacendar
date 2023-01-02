@@ -3,7 +3,7 @@ import axios from "axios";
 // sign up function
 export async function signUp(formData) {
   const { data } = await axios.post(
-    "http://localhost:8000/user/signup",
+    "user/signup",
     formData
   );
   return data;
@@ -12,7 +12,7 @@ export async function signUp(formData) {
 //Log in to User Account
 export async function loginToAccount(formData) {
   const { data } = await axios.post(
-    "http://localhost:8000/user/login",
+    "user/login",
     formData
   );
   return data;
@@ -26,7 +26,7 @@ export async function createComment(formData) {
     },
   };
   const { data } = await axios.post(
-    "http://localhost:8000/comment",
+    "comment",
     formData,
     config
   );
@@ -35,7 +35,7 @@ export async function createComment(formData) {
 
 //show comment
 export async function showComment() {
-  const { data } = await axios.get("http://localhost:8000/comment");
+  const { data } = await axios.get("comment");
   return data;
 }
 
@@ -49,7 +49,7 @@ export async function updateUser(userId, formData) {
     },
   };
   const { data } = await axios.put(
-    `http://localhost:8000/user/${userId}`,
+    `user/${userId}`,
     formData,
     config
   );
@@ -63,11 +63,11 @@ export async function deleteUser(userId) {
       Authorization: localStorage.getItem("token"),
     },
   };
-  await axios.delete(`http://localhost:8000/user/${userId}`, config);
+  await axios.delete(`user/${userId}`, config);
 }
 
 //getUser
 export async function getUser(userid) {
-  const { data } = await axios.get(`http://localhost:8000/user/${userid}`);
+  const { data } = await axios.get(`user/${userid}`);
   return data;
 }
