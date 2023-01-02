@@ -22,7 +22,9 @@ export default function Nav(props) {
 		<div className='nav-item' key='1'>
 			<Link to='/month'>
 				<div className="month-button">
+
 				<h3>Month</h3>
+
 				</div>
 			</Link>
 		</div>,
