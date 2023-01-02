@@ -6,7 +6,9 @@ export default function Footer() {
 		<footer>
 			<a
 				className='link'
-				href='https://apod.nasa.gov/apod/calendar/allyears.html'>
+				href='https://apod.nasa.gov/apod/calendar/allyears.html'
+				target='_blank'
+				rel='noreferrer'>
 				NASA APOD
 			</a>
 			<Link className='link' to='/user'>
@@ -14,10 +16,33 @@ export default function Footer() {
 			</Link>
 			<h5>Contributors: </h5>
 			<h6>
-				<a href='https://github.com/lianneb10'>Lianne Aratea</a>,
-				<a href='https://github.com/piercegoldbeck'>Pierce Goldbeck</a>,
-				<a href='https://github.com/gititgrl'>Jordan Lind</a>, and
-				<a href='https://github.com/case02'>Casey Stocker</a>
+				<a className='link' href='https://github.com/lianneb10' target='_blank'>
+					Lianne Aratea
+				</a>
+				,
+				<a
+					className='link'
+					href='https://github.com/piercegoldbeck'
+					target='_blank'
+					rel='noreferrer'>
+					Pierce Goldbeck
+				</a>
+				,
+				<a
+					className='link'
+					href='https://github.com/gititgrl'
+					target='_blank'
+					rel='noreferrer'>
+					Jordan Lind
+				</a>
+				, and
+				<a
+					className='link'
+					href='https://github.com/case02'
+					target='_blank'
+					rel='noreferrer'>
+					Casey Stocker
+				</a>
 			</h6>
 		</footer>
 	);

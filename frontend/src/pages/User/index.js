@@ -29,15 +29,13 @@ export default function User(prop) {
 	};
 	// delete user function
 	const destroyUser = () => {
-		alert('Do you want to delete this user?');
+		// alert('Delete user');
 		deleteUser(prop.user._id);
 		localStorage.clear();
 		prop.setLogInStatus(false);
 		navigate('/');
 	};
 	
-
-    console.log('this is the userpage formState', formState);
 	return (
 		<div className='display-body'>
 			<div className='delete'>
@@ -78,7 +76,7 @@ export default function User(prop) {
 					</button>
 				</div>
 				{showForm ? (
-					<div className='edit-form'>
+					<div className='edit-form' style={{ width: '20rem' }}>
 						<form onSubmit={handleSubmitUpdateUser}>
 							<label className='form-label' htmlFor='username'>
 								Username:

@@ -32,7 +32,6 @@ export default function Day(props) {
 	//show previous day unless its the first day of the month
 	//show next day unless its the last day of the month
 	function showLink() {
-		console.log(dateState.current);
 		if (date === '2022-12-01') {
 			setShowPrev(false);
 		} else {
@@ -86,7 +85,7 @@ export default function Day(props) {
 			{theDay && (
 				<div className='card'>
 					<div className='card-body'>
-						<div class='card-header'>
+						<div className='card-header'>
 							{showPrev ? (
 								<Link
 									className='day-link previousDay'
@@ -101,9 +100,9 @@ export default function Day(props) {
 								&#187;{' '}
 							</Link> : null }
 						</div>
-						{mediaSource}
-						<p class='card-text'> {theDay.copyright}</p>
-						<p class='card-text'> Explanation: {theDay.explanation}</p>
+						<div>{mediaSource}</div>
+						{theDay.copyright ? <p className='card-text copyright'> copyright: {theDay.copyright}</p> : null}
+						<p className='card-text'> {theDay.explanation}</p>
 					</div>
 				</div>
 			)}

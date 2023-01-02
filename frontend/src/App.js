@@ -34,7 +34,7 @@ function App() {
 		/* Build a URL from the searchOptions object */
 		// const key = process.env.REACT_APP_APOD_KEY;
 		const url =
-			'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-26';
+			'https://api.nasa.gov/planetary/apod?api_key=9lSTCZNq5GoBuU3lchGbDwvD6dGM7q1hwhF4tP5V&start_date=2022-12-01&end_date=2022-12-31';
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
@@ -57,7 +57,7 @@ function App() {
 		}
 		getImages();
 	}, []);
-// Navigate, setUser, setLogInStatus
+
 	return (
 		<div>
 			{/* Header */}
