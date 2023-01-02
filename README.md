@@ -1,9 +1,27 @@
 # Spacendar 👾🔭🪐
-is a calendar for space lovers and enthusiasts. Wake up to a new photo of the universe, everyday. Users are able to view the current day's photo or look back in time to previous days, months or even years. Log in to comment on your favorite photos, share with friends, and get lost in space.
+A calendar for space lovers and enthusiasts. Wake up to a new photo of the universe, everyday. Users are able to view the current day's photo or look back in time to previous days of the month. Log in to comment on your favorite photos, share with friends, and get lost in space.
 
-## Spacendar
-[GitHub Repo](https://github.com/case02/spacendar
-)
+## Technologies Used
+- React JS
+- Axios
+- JWT-Simple
+- Mongoose
+- Express
+
+## Application Features
+- Home page rendering the specific date's photo of the day from the NASA API
+- Month page consisting of every day's photo of the day in calendar format
+- Sign up and login pages for new and current users
+- Ability to comment on month page
+- Daily photo pages that showcases photo of the day, copyright, and explanation of image
+
+## Approach Taken towards MVP and Completion
+During the initial stages of planning, our team was eager to get started and had ideas flying left and right of how we wanted to create our 'photo of the day' calendar. Looking back, we still believe a lot of our initial ideas were good ones, but we just did not have the time or resources to be able to complete them before the due date. We used a lot of mob-coding on the frontend to make sure our entire group was on the same page with each component and page. Throughout the project week, we came to realize that creating an entire year calendar would be more difficult. So, we decided to only use the month of December from our NASA APOD API.
+
+
+## Deployed Application through Heroku
+[Spacendar](https://spacendar.herokuapp.com)
+
 ## Wireframes: 
 [Prototype](https://www.figma.com/proto/eVNUQhWYYLBGpXavMGYfq6/SPACENDAR?node-id=1%3A44&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
 # ![](frontend/src/assets/images/WireFrame.png)
