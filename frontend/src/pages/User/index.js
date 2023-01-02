@@ -34,7 +34,7 @@ export default function User(prop) {
 		prop.setLogInStatus(false);
 		navigate('/');
 	};
-	
+	console.log('test test')
 	return (
 		<div className='display-body'>
 			<div className='delete'>
