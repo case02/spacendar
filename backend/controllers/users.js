@@ -18,9 +18,7 @@ function isAuthenticated(req, res, next){
 
 //signup create route
 router.post('/signup', async (req, res) => {
-    // console.log(req.body)
     const foundUser = await db.User.findOne({ username: req.body.username})
-    // console.log(foundUser)
     if(!foundUser){
         const createdUser = await db.User.create(req.body)
         const payload = {id: createdUser._id}
@@ -37,7 +35,6 @@ router.post('/signup', async (req, res) => {
 //login route
 router.post('/login', async (req, res) => {
     const foundUser = await db.User.findOne({ username: req.body.username})
-    // console.log(foundUser)
     if(req.body.password === foundUser.password){
         const payload = {id: foundUser._id}
         const token = jwt.encode(payload, config.jwtSecret)

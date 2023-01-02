@@ -29,7 +29,6 @@ export default function User(prop) {
 	};
 	// delete user function
 	const destroyUser = () => {
-		// alert('Delete user');
 		deleteUser(prop.user._id);
 		localStorage.clear();
 		prop.setLogInStatus(false);

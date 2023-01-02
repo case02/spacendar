@@ -16,7 +16,11 @@ export default function Footer() {
 			</Link>
 			<h5>Contributors: </h5>
 			<h6>
-				<a className='link' href='https://github.com/lianneb10' target='_blank'>
+				<a
+					className='link'
+					href='https://github.com/lianneb10'
+					target='_blank'
+					rel='noreferrer'>
 					Lianne Aratea
 				</a>
 				,

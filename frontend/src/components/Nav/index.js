@@ -13,8 +13,6 @@ export default function Nav(props) {
 	//logout handle
 	const handleLogout = () => {
 		props.setUser({});
-		// setUsername('');
-		// setPassword('');
 		localStorage.clear();
 	};
 	// state declaration: build JSX array of NavBar items
@@ -45,7 +43,6 @@ export default function Nav(props) {
 				initialState.concat(
 					<Dropdown className='nav-item' key='3'>
 						<Dropdown.Toggle variant='secondary' id='dropdown-basic'>
-						{/* &#8801; */}
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>

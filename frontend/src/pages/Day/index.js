@@ -1,6 +1,5 @@
 // import Comment from '../components/Comment';
 import { useEffect, useState } from 'react';
-import { getImages } from '../../utils/api';
 import { useParams, Link } from 'react-router-dom';
 import './styles.css';
 

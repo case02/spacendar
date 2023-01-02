@@ -1,13 +1,11 @@
 // packages
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // pages
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import User from "./pages/User";
 import Month from "./pages/Month";
 import Day from "./pages/Day";
@@ -102,7 +100,6 @@ function App() {
 						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser}/>
 					}
 				/>
-				{/* <Route path='/user/:id' element={<User />} /> */}
 			</Routes>
 		</div>
 	);

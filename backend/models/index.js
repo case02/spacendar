@@ -5,7 +5,7 @@ const connectionString = process.env.MONGODBURI
 
 
 mongoose.set('strictQuery', false)
-// connetc to MongoDB via mongoose
+// connect to MongoDB via mongoose
 mongoose.connect(
     connectionString,
     { useNewUrlParser: true, useUnifiedTopology: true }
