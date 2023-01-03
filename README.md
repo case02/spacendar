@@ -12,6 +12,7 @@ A calendar for space lovers and enthusiasts. Wake up to a new photo of the unive
 - Home page rendering the specific date's photo of the day from the NASA API
 - Month page consisting of every day's photo of the day in calendar format
 - Sign up and login pages for new and current users
+- Full CRUD on User model
 - Ability to comment on month page
 - Daily photo pages that showcases photo of the day, copyright, and explanation of image
 
@@ -21,10 +22,6 @@ During the initial stages of planning, our team was eager to get started and had
 
 ## Deployed Application through Heroku
 [Spacendar](https://spacendar.herokuapp.com)
-
-## Wireframes: 
-[Prototype](https://www.figma.com/proto/eVNUQhWYYLBGpXavMGYfq6/SPACENDAR?node-id=1%3A44&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
-# ![](frontend/src/assets/images/WireFrame.png)
 
 ## Team Roles
 <details>
@@ -52,5 +49,9 @@ During the initial stages of planning, our team was eager to get started and had
 ### Route Page
 [Route Page Project 3.xlsx](https://github.com/case02/spacendar/files/10263256/Route.Page.Project.3.xlsx)
 ![Screen Shot 2022-12-19 at 2 44 33 PM](https://user-images.githubusercontent.com/112737174/208541884-8c36a007-072a-4ce8-a745-00f2953a1745.png)
+
+### Wireframes: 
+[Prototype](https://www.figma.com/proto/eVNUQhWYYLBGpXavMGYfq6/SPACENDAR?node-id=1%3A44&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=1%3A2)
+# ![](frontend/src/assets/images/WireFrame.png)
 
 
