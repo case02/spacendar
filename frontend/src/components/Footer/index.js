@@ -11,8 +11,8 @@ export default function Footer() {
 				rel='noreferrer'>
 				NASA APOD
 			</a>
-			<Link className='link' to='/user'>
-				My Account
+			<Link className='link' to='/user-info'>
+				User Account
 			</Link>
 			<h5>Contributors: </h5>
 			<h6>

@@ -63,6 +63,7 @@ function App() {
 				isLoggedIn={isLoggedIn}
 				setLogInStatus={setLogInStatus}
 				setUser={setUser}
+				user={user}
 			/>
 
 			{/* Footer */}
@@ -72,7 +73,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Home monthImages={monthImages} />} />
 				<Route
-					path='/user'
+					path='/user-info'
 					element={<User user={user} setLogInStatus={setLogInStatus} />}
 				/>
 				<Route
@@ -84,7 +85,7 @@ function App() {
 					element={<Day monthImages={monthImages} media_type={media_type} />}
 				/>
 				<Route
-					path='/user/login'
+					path='/login'
 					element={
 						<LogIn
 							isLoggedIn={isLoggedIn}
@@ -95,7 +96,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/user/signup'
+					path='/signup'
 					element={
 						<SignUp isLoggedIn={isLoggedIn} setLogInStatus={setLogInStatus} setUser={setUser}/>
 					}

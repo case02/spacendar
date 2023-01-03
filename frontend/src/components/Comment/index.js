@@ -63,7 +63,6 @@ export default function Comment(props) {
 				</div>
 				<div className='display-comments'>
 					<h1>Comments</h1>
-					{console.log(comments)}
 					{comments.map((comment, i) => (
 						
 						<div key={i}> {comment.user?.username || 'Anonymous'}: {comment.comment}</div>
