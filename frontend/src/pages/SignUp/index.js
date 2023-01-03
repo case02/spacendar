@@ -11,21 +11,21 @@ export default function SignUp(props) {
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.name]: event.target.value })};
 		
-		// function handleSubmit(event) {
-		// 	event.preventDefault();
-		// 	signUp(formState).then((data) => {
-		// 		localStorage.token = data.token;
-		// 		localStorage.user_Id = data.user._id;
-		// 		props.setUser(data.user);
-		// 	});
-		// 	navigate('/user/login')
-		// };
+		function handleSubmit(event) {
+			event.preventDefault();
+			signUp(formState).then((data) => {
+				localStorage.token = data.token;
+				localStorage.user_Id = data.user._id;
+				props.setUser(data.user);
+			});
+			navigate('/login')
+		};
 
 		return (
 			<div className='card signup-form' style={{ width: '20rem' }}>
 				<div className='card-body'>
 					<h1>Sign Up</h1>
-					<form >
+					<form onSubmit={handleSubmit}>
 						<label htmlFor='username' className='form-label'>
 							<p>Username</p>
 							<input

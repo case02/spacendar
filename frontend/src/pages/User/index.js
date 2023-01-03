@@ -25,7 +25,7 @@ export default function User(prop) {
 		event.preventDefault();
 		updateUser(prop.user._id, formState)
 		setShowForm(false);
-		navigate('/user');
+		navigate('/user-info');
 	};
 	// delete user function
 	const destroyUser = () => {
@@ -34,7 +34,7 @@ export default function User(prop) {
 		prop.setLogInStatus(false);
 		navigate('/');
 	};
-	console.log('test test')
+	
 	return (
 		<div className='display-body'>
 			<div className='delete'>
