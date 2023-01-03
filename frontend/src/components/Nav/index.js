@@ -55,7 +55,7 @@ export default function Nav(props) {
 								Logout
 							</Dropdown.Item>
 							<Dropdown.Divider />
-							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
+							<Dropdown.Item href='/user-info'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
 				)
@@ -69,10 +69,10 @@ export default function Nav(props) {
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
-							<Dropdown.Item href='/user/signup'>Sign Up</Dropdown.Item>
-							<Dropdown.Item href='/user/login'>Login</Dropdown.Item>
+							<Dropdown.Item href='/signup'>Sign Up</Dropdown.Item>
+							<Dropdown.Item href='/login'>Login</Dropdown.Item>
 							<Dropdown.Divider />
-							<Dropdown.Item href='/user'>User Account</Dropdown.Item>
+							<Dropdown.Item href='/user-info'>User Account</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>,
 				])
